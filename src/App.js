@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+//import './App.css';
+import HomePage from './HomePage';
+import SideBar from './SideBar';
+import ProjectsPage from './ProjectsPage';
+import React, { useState } from 'react';
+import AboutPage from './AboutPage';
+import ContactPage from './ContactPage';
+
+const components = {
+  "Home": <HomePage />,
+  "Projects": <ProjectsPage />,
+  "About": <AboutPage />,
+  "Contact": <ContactPage />
+}
 
 function App() {
+  const [page, setPage] = useState('Home')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex">
+      <SideBar pageSetter={setPage} />
+      {components[page]}
     </div>
   );
 }
