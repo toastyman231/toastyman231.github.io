@@ -8,7 +8,7 @@ import Cookies from 'universal-cookie';
 let page;
 let prevButton = 'Home';
 const cookies = new Cookies()
-prevButton = cookies.get('lastPage')
+prevButton = cookies.get('lastPage') != null ? cookies.get('lastPage') : 'Home'
 
 const SideBar = ({pageSetter}) => {
     page = pageSetter;
