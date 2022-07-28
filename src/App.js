@@ -5,6 +5,7 @@ import ProjectsPage from './ProjectsPage';
 import React, { useState } from 'react';
 import AboutPage from './AboutPage';
 import ContactPage from './ContactPage';
+import Cookies from 'universal-cookie';
 
 const components = {
   "Home": <HomePage />,
@@ -14,7 +15,10 @@ const components = {
 }
 
 function App() {
-  const [page, setPage] = useState('Home')
+  const cookies = new Cookies('lastPage');
+  let cookie = cookies.get('lastPage') != null ? cookies.get('lastPage') : 'Home'
+
+  const [page, setPage] = useState(cookie)
 
   return (
     <div className="flex">

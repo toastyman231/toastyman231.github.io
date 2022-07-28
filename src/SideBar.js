@@ -2,13 +2,17 @@
 import { BsBraces, BsFillPersonFill, BsChatTextFill } from 'react-icons/bs';
 import { FaHome } from 'react-icons/fa';
 import React, { useState } from 'react';
+import Cookies from 'universal-cookie';
+
 
 let page;
 let prevButton = 'Home';
+const cookies = new Cookies()
+prevButton = cookies.get('lastPage')
 
 const SideBar = ({pageSetter}) => {
     page = pageSetter;
-    
+
     return (
         <div className="fixed top-0 left-0 h-screen w-16 m-0 
                         flex flex-col 
@@ -26,7 +30,7 @@ function SideBarIcon({icon, newPage, text = 'tooltip'}) {
     const [isActive, setIsActive] = useState(false);
 
     return(
-      <div onClick={() => {UpdateAll(page, newPage, setIsActive, CheckState(text))}} className={ReturnClassName(CheckState(text))}>
+      <div onClick={() => {UpdateAll(page, newPage, setIsActive, CheckState(text), cookies)}} className={ReturnClassName(CheckState(text))}>
         {icon} 
 
         <span className="sidebar-tooltip group-hover:scale-100">
@@ -46,11 +50,13 @@ function ReturnClassName(active){
 
 const Divider = () => <hr className="sidebar-hr" />;
 
-function UpdateAll(page, newContent, state, newState) {
+function UpdateAll(page, newContent, state, newState, myCookies) {
   prevButton = newContent
   page(newContent)
   state(newState)
-  console.log(prevButton)
+  myCookies.set('lastPage', newContent, {path: '/'})
+  console.log(cookies.get('lastPage'))
+  //console.log(prevButton)
 }
 
 export default SideBar;
