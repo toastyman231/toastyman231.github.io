@@ -4,7 +4,6 @@ function HomePage() {
     const isMobile = window.innerWidth <= 768;
 
     return (
-        
         isMobile ? <Mobile /> : <Desktop />
     );
 };
@@ -22,6 +21,7 @@ const Desktop = () => {
                         <div className="flex object-left pl-[200px] pr-20 pt-5">
                             <img src={jake} alt="Jake Morgenstern headshot" width={1728} height={2304} />
                         </div>
+
                         <div className="text-lg font-bold text-center pr-[200px] pt-5">
                             Hi, my name is Jake Morgenstern, and I'm a game development and computer science student at Indiana University
                             Bloomington. I primarily use the Unity game engine, but I also have experience with Unreal Engine 5. Use the

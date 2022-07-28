@@ -43,8 +43,8 @@
         mx-2;
       }
 
-      .content-container {
-        @apply w-screen h-screen m-0 ml-16 bg-gray-200 dark:bg-gray-800
-                overflow-hidden;
-      }
+    .content-container {
+      @apply w-screen h-screen m-0 ml-16 bg-gray-200 dark:bg-gray-800
+            overflow-hidden;
+    }
 }
