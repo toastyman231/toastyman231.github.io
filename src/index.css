@@ -42,7 +42,7 @@
         border border-gray-200 dark:border-gray-800 rounded-full
         mx-2;
     }
-    
+
     .content-container {
       @apply w-screen h-screen m-0 ml-16 bg-gray-200 dark:bg-gray-800
             overflow-hidden;
@@ -51,4 +51,5 @@
     .vertical-timeline-element-title {
       @apply text-center text-white font-bold text-xl
     }
+
 }
