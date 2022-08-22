@@ -1,7 +1,6 @@
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import { GiTeacher, GiSandwich } from 'react-icons/gi';
-import { FaIceCream } from 'react-icons/fa';
+import { GiTeacher } from 'react-icons/gi';
 import { SiCsharp, SiUnity, SiUnrealengine} from 'react-icons/si';
 
 const isMobile = window.innerWidth <= 768;
@@ -34,37 +33,7 @@ const AboutPage = () => {
                             <p>
                                 Ran the camp network, including connecting devices and backing up network storage. Also taught game development and coding to kids and teens while maintaining a fun camp environment.
                             </p>
-                        </VerticalTimelineElement>
-
-                        <VerticalTimelineElement className="vertical-timeline-element--work"
-                                                contentStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
-                                                contentArrowStyle={{ borderRight: '7px solid  rgb(22, 163, 74)' }}
-                                                date="September 2020 - May 2021"
-                                                dateClassName="text-left"
-                                                position='right'
-                                                iconStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
-                                                icon={<GiSandwich />}>
-                            <h3 className="vertical-timeline-element-title">Cashier at Steak Escape</h3>
-                            <h4 className="vertical-timeline-element-subtitle">Indianapolis, IN</h4>
-                            <p>
-                                Served many customers in a fast-paced environment. Performed duties such as running the register and grill, as well as assembling sandwiches.
-                            </p>
-                        </VerticalTimelineElement>
-
-                        <VerticalTimelineElement className="vertical-timeline-element--work"
-                                                contentStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
-                                                contentArrowStyle={{ borderRight: '7px solid  rgb(22, 163, 74)' }}
-                                                date="November 2018 - September 2020"
-                                                dateClassName="text-left"
-                                                position='left'
-                                                iconStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
-                                                icon={<FaIceCream />}>
-                            <h3 className="vertical-timeline-element-title">Assistant Manager at Baskin Robbins</h3>
-                            <h4 className="vertical-timeline-element-subtitle">Indianapolis, IN</h4>
-                            <p>
-                                Started as a cashier and was promoted to Shift Leader within a year.  Gained experience leading a team and resolving issues with customers.
-                            </p>
-                        </VerticalTimelineElement>
+                        </VerticalTimelineElement>  
                     </VerticalTimeline>
 
                     <div className="text-bold text-5xl text-center pt-5">
@@ -79,7 +48,7 @@ const AboutPage = () => {
                                     Experienced with C# and the .Net ecosystem.
                                 </div>
                                 <div className='text-thin text-base text-center pt-2'>
-                                    Proficient with Visual Studio, Rider, and other C# IDEs.
+                                    Taught C# and programming fundamentals to kids aged 8 - 17.
                                 </div>
                             </div>
                             <div className={isMobile ? 'flex flex-col items-center justify-center pb-2 pt-3'
