@@ -13,6 +13,14 @@ const ProjectsPage = () => {
 
             <div className="flex flex-col items-center px-1 py-5">
                 <div className="pb-2">
+                    <VideoProject projectName="MAGELLAN: Remastered"
+                        projectDesc="This is a remake of a project from high school, MAGELLAN: The Game. 
+                        It takes inspiration from The Oregon Trail, and players will experience sailing the high seas, trading with natives, hunting for food, 
+                        discovering new places, and more!" width={960} height={540}
+                        hasScreenshot={true} videoLink="https://www.youtube.com/embed/7PHp28iHcG4" link="https://github.com/toastyman231/MAGELLAN-Remastered" />
+                </div>
+
+                <div className="pb-2">
                     <Project projectName="Untitled Action RPG with Unity" 
                         projectDesc="This is a personal project I started for fun. The game is currently incomplete, but when finished 
                         it will be an action RPG with a crafting based power system. Players can run on walls, throw lightning, 
@@ -59,6 +67,40 @@ const Project = ({projectName, projectDesc, imageID, width, height, hasScreensho
 
             <div className="flex flex-col items-center px-2 py-2">
                 {hasScreenshot ? (<img src={imageList[imageID]} alt="Project screenshot" width={width} height={height} />) : null}
+            </div>
+
+            <div className="pb-3">
+                <button onClick={()=>{window.open(
+                                        link,
+                                        '_blank' // <- This is what makes it open in a new window.
+                                    );}} 
+                        className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                    {buttonText}</button>
+            </div> 
+        </div>
+    );
+
+    
+}
+
+const VideoProject = ({projectName, projectDesc, width, height, hasScreenshot, videoLink, link, buttonText="View on GitHub"}) => {
+    return (
+        <div className={
+            isMobile ? "bg-gray-900 text-white text-center text-lg font-bold w-full rounded-md pt-2" 
+            : "bg-gray-900 text-white text-center text-lg font-bold w-[1000px] object-center rounded-md pt-2"
+        }>
+            <div className={isMobile ? "divide-y" : ""}>
+                <div>
+                    {projectName}
+                </div>
+                
+                <div className={isMobile ? "text-base px-1 pt-1" : "text-base"}>
+                    {projectDesc}
+                </div>
+            </div>
+
+            <div className="flex flex-col items-center px-2 py-2">
+                {hasScreenshot ? (<iframe width={width} height={height} src={videoLink} alt="Project screenshot"/>) : null}
             </div>
 
             <div className="pb-3">
