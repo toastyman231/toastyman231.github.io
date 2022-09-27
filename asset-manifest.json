@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.fbfc0ce7.css",
-    "main.js": "/static/js/main.582016b0.js",
+    "main.js": "/static/js/main.4ee421d7.js",
     "static/media/superherorpg.gif": "/static/media/superherorpg.f1339f9c1dc401715c89.gif",
     "static/media/HyperflightPoster.jpg": "/static/media/HyperflightPoster.9aad78b0c34d72d9a6a4.jpg",
     "static/media/jake_photo.jpg": "/static/media/jake_photo.fa65c28d999545070ce2.jpg",
     "index.html": "/index.html",
     "main.fbfc0ce7.css.map": "/static/css/main.fbfc0ce7.css.map",
-    "main.582016b0.js.map": "/static/js/main.582016b0.js.map"
+    "main.4ee421d7.js.map": "/static/js/main.4ee421d7.js.map"
   },
   "entrypoints": [
     "static/css/main.fbfc0ce7.css",
-    "static/js/main.582016b0.js"
+    "static/js/main.4ee421d7.js"
   ]
 }
