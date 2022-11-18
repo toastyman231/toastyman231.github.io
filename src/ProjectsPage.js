@@ -1,8 +1,9 @@
 import superRPG from "./Images/superherorpg.gif";
 import hyper from "./Images/HyperflightPoster.jpg";
+import idle from "./Images/idlebreakout.png"
 
 const isMobile = window.innerWidth <= 768;
-const imageList = [superRPG, hyper];
+const imageList = [superRPG, hyper, idle];
 
 const ProjectsPage = () => {
     return (
@@ -18,6 +19,14 @@ const ProjectsPage = () => {
                         It takes inspiration from The Oregon Trail, and players will experience sailing the high seas, trading with natives, hunting for food, 
                         discovering new places, and more!" width={960} height={540}
                         hasScreenshot={true} videoLink="https://www.youtube.com/embed/7PHp28iHcG4" link="https://github.com/toastyman231/MAGELLAN-Remastered" />
+                </div>
+
+                <div className="pb-2">
+                    <Project projectName="Idle Breakout, but Epic" 
+                        projectDesc="This is my final project for my Intro to Games Programming class. It's a clone of Idle Breakout by Kodiqi, and I used it
+                        to learn Unity's Entity Component System."
+                        imageID={2} hasScreenshot={true} link="https://github.com/toastyman231/IdleBreakoutButEpic"
+                        itchLink="https://toastyman231.itch.io/idle-breakout-but-epic" />
                 </div>
 
                 <div className="pb-2">
@@ -49,7 +58,7 @@ const ProjectsPage = () => {
     );
 };
 
-const Project = ({projectName, projectDesc, imageID, width, height, hasScreenshot, link, buttonText="View on GitHub"}) => {
+const Project = ({projectName, projectDesc, imageID, width, height, hasScreenshot, link, buttonText="View on GitHub", itchLink="", itchButton="View on Itch.io"}) => {
     return (
         <div className={
             isMobile ? "bg-gray-900 text-white text-center text-lg font-bold w-full rounded-md pt-2" 
@@ -76,6 +85,16 @@ const Project = ({projectName, projectDesc, imageID, width, height, hasScreensho
                                     );}} 
                         className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                     {buttonText}</button>
+            </div> 
+                
+            <div className="pb-3">
+                {itchLink!=="" ? 
+                <button onClick={()=>{window.open(
+                                        itchLink,
+                                        '_blank' // <- This is what makes it open in a new window.
+                                    );}} 
+                        className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                    {itchButton}</button> : null}
             </div> 
         </div>
     );
