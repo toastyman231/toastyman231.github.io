@@ -2,6 +2,8 @@ import superRPG from "./Images/superherorpg.gif";
 import hyper from "./Images/HyperflightPoster.jpg";
 import idle from "./Images/idlebreakout.png"
 
+import ReactPlayer from 'react-player'
+
 const isMobile = window.innerWidth <= 768;
 const imageList = [superRPG, hyper, idle];
 
@@ -13,6 +15,22 @@ const ProjectsPage = () => {
             </div>
 
             <div className="flex flex-col items-center px-1 py-5">
+                <div className="pb-2">
+                    <Project projectName="Based Engine - Custom Game Engine written in C++"
+                        projectDesc="A custom game engine I wrote using C++, OpenGL, SDL2, and more in order to improve my skills with C++. It 
+                        features text rendering with SDL, an entity-component system that automatically renders entities with Renderer components, 
+                        easy support for custom icons, sprite rendering with materials, and more to come. I also wrote a custom toolchain for it using python
+                        which allows users to easily generate new projects from a template."
+                        link="https://github.com/toastyman231/BasedEngine" />
+                </div>
+
+                <div className="pb-2">
+                    <VideoProject projectName="Time Stop Power Demo"
+                        projectDesc="This project showcases a simple time stopping gameplay mechanic, created using Unity's timescale feature. 
+                        I also used it to play around with some shader effects, such as the URP fullscreen shader shown whenever time is stopped." 
+                        width={960} height={540} hasScreenshot={true} videoLink="videos/TimeStopRecording_004.mp4" link="https://github.com/toastyman231/TimeStopPower" />
+                </div>
+
                 <div className="pb-2">
                     <VideoProject projectName="MAGELLAN: Remastered"
                         projectDesc="This is a remake of a project from high school, MAGELLAN: The Game. 
@@ -119,7 +137,7 @@ const VideoProject = ({projectName, projectDesc, width, height, hasScreenshot, v
             </div>
 
             <div className="flex flex-col items-center px-2 py-2">
-                {hasScreenshot ? (<iframe width={width} height={height} src={videoLink} alt="Project screenshot"/>) : null}
+                <ReactPlayer url={videoLink} playing={true} loop={true} width={width} height={height} />
             </div>
 
             <div className="pb-3">

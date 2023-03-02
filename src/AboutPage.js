@@ -11,7 +11,7 @@ const AboutPage = () => {
             <div className={isMobile ? "text-white text-center flex flex-col pt-5 px-2" : "text-white text-center flex flex-col pt-5 px-20"}>
                 <div className="text-bold text-5xl text-center">About Me</div>
                 <div className="text-thin text-xl text-center pt-5">
-                    Game developer with Unity and C#, with experience in Unreal Engine 5.
+                    Game developer with Unity, C#, Unreal Engine 5, and C++.
                     Student at Indiana University Bloomington, studying Computer Science with a specialization in game development.
                     Courses taken include: Java, Game Design, Discrete Structures, Game Programming, and more.
                 </div>
@@ -65,7 +65,7 @@ const AboutPage = () => {
                                             : 'flex flex-col items-center justify-center px-5'}>
                                 <SiUnrealengine size="100" className='' />
                                 <div className='text-thin text-base text-center pt-3'>
-                                    Familiar with Unreal workflow and Blueprint editor.
+                                    Familiar with Unreal workflow, Blueprints, and C++.
                                 </div>
                                 <div className='text-thin text-base text-center pt-2'>
                                     Taught Unreal to kids at Emagination Tech Camp.
@@ -76,7 +76,7 @@ const AboutPage = () => {
                 </div>
 
                 <div className='pt-5 font-bold'>
-                    Additional Skills: Java, Networking and Database Management basics
+                    Additional Skills: C++, Engine Development, Java, Networking and Database Management basics
                 </div>
             </div>
             &nbsp;
