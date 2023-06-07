@@ -33,6 +33,20 @@ const AboutPage = () => {
                             <p>
                                 Ran the camp network, including connecting devices and backing up network storage. Also taught game development and coding to kids and teens while maintaining a fun camp environment.
                             </p>
+                        </VerticalTimelineElement>
+                        <VerticalTimelineElement className="vertical-timeline-element--work"
+                                                contentStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
+                                                contentArrowStyle={{ borderRight: '7px solid  rgb(22, 163, 74)' }}
+                                                date="May 2023 - Present"
+                                                dateClassName="text-left"
+                                                iconStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
+                                                icon={<SiUnrealengine />}>
+                            <h3 className="vertical-timeline-element-title">Technical Designer</h3>
+                            <h3 className="vertical-timeline-element-title">at The Raft Genre</h3>
+                            <h4 className="vertical-timeline-element-subtitle">Bloomington, IN (Remote)</h4>
+                            <p>
+                            Helped design and develop a tactics game prototype using Unreal Engine 5. Worked alongside artists and other designers to deliver a unique and exciting gameplay experience.
+                            </p>
                         </VerticalTimelineElement>  
                     </VerticalTimeline>
 
@@ -76,7 +90,7 @@ const AboutPage = () => {
                 </div>
 
                 <div className='pt-5 font-bold'>
-                    Additional Skills: C++, Engine Development, Java, Networking and Database Management basics
+                    Additional Skills: C++, Engine Development, Java, Perforce, Networking and Database Management basics
                 </div>
             </div>
             &nbsp;

@@ -25,6 +25,22 @@ const ProjectsPage = () => {
                 </div>
 
                 <div className="pb-2">
+                    <VideoProject projectName="Into The Heart (Unreal Port)"
+                        projectDesc="This project was for an assignment to port a game from one engine to another. My partner and I chose Into the Heart by Amanda 
+                        and Alina Trang, originally a Unity game. This project was one of the first C++ games I made with Unreal." 
+                        width={960} height={540} hasScreenshot={true} videoLink="videos/intotheheart.mkv" volume={0} link="https://github.com/toastyman231/IntoTheHeartUnreal" />
+                </div>
+
+                <div className="pb-2">
+                    <VideoProject projectName="Escape Room Adventure"
+                        projectDesc="This was my final project for my game production class. I created a custom interaction system, inventory system, and experimented with
+                        post process shaders by implementing an object outline shader based on resources I found online. The game can be played on itch, although the web build is
+                        not as good as the executable." 
+                        width={960} height={540} hasScreenshot={true} videoLink="videos/escaperoom.mkv" volume={0} link="https://github.com/toastyman231/IntoTheHeartUnreal"
+                        itchLink="https://toastyman231.itch.io/escape-room-adventure" />
+                </div>
+
+                <div className="pb-2">
                     <VideoProject projectName="Time Stop Power Demo"
                         projectDesc="This project showcases a simple time stopping gameplay mechanic, created using Unity's timescale feature. 
                         I also used it to play around with some shader effects, such as the URP fullscreen shader shown whenever time is stopped." 
@@ -120,7 +136,7 @@ const Project = ({projectName, projectDesc, imageID, width, height, hasScreensho
     
 }
 
-const VideoProject = ({projectName, projectDesc, width, height, hasScreenshot, videoLink, link, buttonText="View on GitHub"}) => {
+const VideoProject = ({projectName, projectDesc, width, height, hasScreenshot, videoLink, volume, link, itchLink="", itchButton="View on Itch", buttonText="View on GitHub"}) => {
     return (
         <div className={
             isMobile ? "bg-gray-900 text-white text-center text-lg font-bold w-full rounded-md pt-2" 
@@ -137,7 +153,7 @@ const VideoProject = ({projectName, projectDesc, width, height, hasScreenshot, v
             </div>
 
             <div className="flex flex-col items-center px-2 py-2">
-                <ReactPlayer url={videoLink} playing={true} loop={true} width={width} height={height} />
+                <ReactPlayer url={videoLink} volume={volume} playing={true} loop={true} width={width} height={height} />
             </div>
 
             <div className="pb-3">
@@ -147,6 +163,16 @@ const VideoProject = ({projectName, projectDesc, width, height, hasScreenshot, v
                                     );}} 
                         className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                     {buttonText}</button>
+            </div>
+
+            <div className="pb-3">
+                {itchLink!=="" ? 
+                <button onClick={()=>{window.open(
+                                        itchLink,
+                                        '_blank' // <- This is what makes it open in a new window.
+                                    );}} 
+                        className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                    {itchButton}</button> : null}
             </div> 
         </div>
     );
