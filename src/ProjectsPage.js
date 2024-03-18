@@ -16,12 +16,13 @@ const ProjectsPage = () => {
 
             <div className="flex flex-col items-center px-1 py-5">
                 <div className="pb-2">
-                    <Project projectName="Based Engine - Custom Game Engine written in C++"
-                        projectDesc="A custom game engine I wrote using C++, OpenGL, SDL2, and more in order to improve my skills with C++. It 
-                        features text rendering with SDL, an entity-component system that automatically renders entities with Renderer components, 
-                        easy support for custom icons, sprite rendering with materials, and more to come. I also wrote a custom toolchain for it using python
+                    <VideoProject projectName="Based Engine - Custom Game Engine written in C++"
+                        projectDesc="A custom game engine I wrote using C++, OpenGL, SDL2, and more, in order to improve my skills with C++. It 
+                        features an entity-component system that automatically renders entities with Renderer components, skeletal animations with state machines,
+                        easy support for custom icons, support for custom materials, and more to come. I also wrote a custom toolchain for it using python
                         which allows users to easily generate new projects from a template."
-                        link="https://github.com/toastyman231/BasedEngine" />
+                        link="https://github.com/toastyman231/BasedEngine" hasScreenshot={true} videoLink="videos/engine_demo.mp4"
+                        volume={0} width={960} height={540} />
                 </div>
 
                 <div className="pb-2">

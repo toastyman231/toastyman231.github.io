@@ -24,8 +24,9 @@ const Desktop = () => {
 
                         <div className="text-lg font-bold text-center pr-[200px] pt-5">
                             Hi, my name is Jake Morgenstern, and I'm a game development and computer science student at Indiana University
-                            Bloomington. I primarily use the Unity game engine, but I also have experience with Unreal Engine 5. Use the
-                            bar on the left to explore my projects, learn more about me, or get in contact. If you want to take a look
+                            Bloomington with experience in Unreal Engine 5 and Unity. Right now I'm working on an
+                            unnanounced tactics game at The Raft Genre, a studio in Bloomington partnered with IU's Game Design program.
+                            Use the bar on the left to explore my projects, learn more about me, or get in contact. If you want to take a look
                             at what I've done, click the button below to view my Github.
 
                             <Divider />

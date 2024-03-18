@@ -41,7 +41,7 @@ const AboutPage = () => {
                                                 dateClassName="text-left"
                                                 iconStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
                                                 icon={<SiUnrealengine />}>
-                            <h3 className="vertical-timeline-element-title">Technical Designer</h3>
+                            <h3 className="vertical-timeline-element-title">Programmer</h3>
                             <h3 className="vertical-timeline-element-title">at The Raft Genre</h3>
                             <h4 className="vertical-timeline-element-subtitle">Bloomington, IN (Remote)</h4>
                             <p>
@@ -90,7 +90,7 @@ const AboutPage = () => {
                 </div>
 
                 <div className='pt-5 font-bold'>
-                    Additional Skills: C++, Engine Development, Java, Perforce, Networking and Database Management basics
+                    Additional Skills: C++, Engine Development, Graphics Programming, Java, Perforce, Networking and Database Management basics
                 </div>
             </div>
             &nbsp;
