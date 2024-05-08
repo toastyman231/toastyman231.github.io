@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ec71c66a.css",
-    "main.js": "/static/js/main.b4766fa7.js",
+    "main.css": "/static/css/main.a5a19722.css",
+    "main.js": "/static/js/main.eaed796c.js",
     "reactPlayerYouTube.js": "/static/js/reactPlayerYouTube.0191d32e.chunk.js",
     "reactPlayerSoundCloud.js": "/static/js/reactPlayerSoundCloud.e5d8662d.chunk.js",
     "reactPlayerVimeo.js": "/static/js/reactPlayerVimeo.cc0119bb.chunk.js",
@@ -16,13 +16,10 @@
     "reactPlayerKaltura.js": "/static/js/reactPlayerKaltura.8a105b47.chunk.js",
     "reactPlayerFilePlayer.js": "/static/js/reactPlayerFilePlayer.b0616e45.chunk.js",
     "reactPlayerPreview.js": "/static/js/reactPlayerPreview.83fa2b2a.chunk.js",
-    "static/media/superherorpg.gif": "/static/media/superherorpg.f1339f9c1dc401715c89.gif",
-    "static/media/HyperflightPoster.jpg": "/static/media/HyperflightPoster.9aad78b0c34d72d9a6a4.jpg",
     "static/media/jake_photo.jpg": "/static/media/jake_photo.fa65c28d999545070ce2.jpg",
-    "static/media/idlebreakout.png": "/static/media/idlebreakout.8d90e9eb882abb500be5.png",
     "index.html": "/index.html",
-    "main.ec71c66a.css.map": "/static/css/main.ec71c66a.css.map",
-    "main.b4766fa7.js.map": "/static/js/main.b4766fa7.js.map",
+    "main.a5a19722.css.map": "/static/css/main.a5a19722.css.map",
+    "main.eaed796c.js.map": "/static/js/main.eaed796c.js.map",
     "reactPlayerYouTube.0191d32e.chunk.js.map": "/static/js/reactPlayerYouTube.0191d32e.chunk.js.map",
     "reactPlayerSoundCloud.e5d8662d.chunk.js.map": "/static/js/reactPlayerSoundCloud.e5d8662d.chunk.js.map",
     "reactPlayerVimeo.cc0119bb.chunk.js.map": "/static/js/reactPlayerVimeo.cc0119bb.chunk.js.map",
@@ -39,7 +36,7 @@
     "reactPlayerPreview.83fa2b2a.chunk.js.map": "/static/js/reactPlayerPreview.83fa2b2a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ec71c66a.css",
-    "static/js/main.b4766fa7.js"
+    "static/css/main.a5a19722.css",
+    "static/js/main.eaed796c.js"
   ]
 }
