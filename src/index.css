@@ -43,6 +43,12 @@
         mx-2;
     }
 
+    .sidebar-hr-white {
+      @apply bg-white 
+      border border-white rounded-full
+      mx-2;
+  }
+
     .content-container {
       @apply w-screen h-screen m-0 ml-16 bg-gray-800
             overflow-hidden;

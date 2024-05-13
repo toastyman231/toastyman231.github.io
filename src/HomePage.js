@@ -24,19 +24,27 @@ const Desktop = () => {
 
                         <div className="text-lg font-bold text-center pr-[200px] pt-5">
                             Hi, my name is Jake Morgenstern, and I'm a game development and computer science student at Indiana University
-                            Bloomington with experience in Unreal Engine 5 and Unity. Right now I'm working on an
-                            unnanounced tactics game at The Raft Genre, a studio in Bloomington partnered with IU's Game Design program.
+                            Bloomington with experience in Unreal Engine 5 and Unity. Currently I'm working on Decomposition, an analog horror game,
+                            and an unnanounced narrative-driven tactics game.
                             Use the bar on the left to explore my projects, learn more about me, or get in contact. If you want to take a look
                             at what I've done, click the button below to view my Github.
 
                             <Divider />
 
-                            <button onClick={()=>{window.open(
-                                                    'https://www.github.com/toastyman231',
-                                                    '_blank' // <- This is what makes it open in a new window.
-                                                );}} 
-                                    className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                                        View my GitHub!</button>
+                            <div className="flex flex-col items-center">
+                                <button onClick={()=>{window.open(
+                                                        'https://www.github.com/toastyman231',
+                                                        '_blank' // <- This is what makes it open in a new window.
+                                                    );}} 
+                                        className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 mb-4 rounded">
+                                            View my GitHub!</button>
+                                <button onClick={()=>{window.open(
+                                            'https://toastyman231.itch.io/',
+                                            '_blank' // <- This is what makes it open in a new window.
+                                        );}} 
+                                        className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                                            View my Itch.io!</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -60,18 +68,27 @@ const Mobile = () => {
 
                         <div className="text-lg font-bold text-center pl-5 pr-5 pt-5">
                             Hi, my name is Jake Morgenstern, and I'm a game development and computer science student at Indiana University
-                            Bloomington. I primarily use the Unity game engine, but I also have experience with Unreal Engine 5. Use the
-                            bar on the left to explore my projects, learn more about me, or get in contact. If you want to take a look
+                            Bloomington with experience in Unreal Engine 5 and Unity. Currently I'm working on Decomposition, an analog horror game,
+                            and an unnanounced narrative-driven tactics game.
+                            Use the bar on the left to explore my projects, learn more about me, or get in contact. If you want to take a look
                             at what I've done, click the button below to view my Github.
 
                             <Divider />
 
-                            <button onClick={()=>{window.open(
-                                            'https://www.github.com/toastyman231',
+                            <div className="flex flex-col items-center">
+                                <button onClick={()=>{window.open(
+                                                        'https://www.github.com/toastyman231',
+                                                        '_blank' // <- This is what makes it open in a new window.
+                                                    );}} 
+                                        className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 mb-4 rounded">
+                                            View my GitHub!</button>
+                                <button onClick={()=>{window.open(
+                                            'https://toastyman231.itch.io/',
                                             '_blank' // <- This is what makes it open in a new window.
                                         );}} 
-                                    className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                                View my GitHub!</button>
+                                        className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                                            View my Itch.io!</button>
+                            </div>
 
                             <Divider />
                         </div>
