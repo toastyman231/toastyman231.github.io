@@ -49,8 +49,9 @@ const ProjectsPage = () => {
                         </div>} modal position="center" contentStyle={{backgroundColor: "#202225", borderRadius: "6px", paddingTop: "16px",
                                                                         paddingBottom: "16px", color: "#FFFFFF", width: "fit-content", height: "fit-content"}}>
                             <ProjectCard projectName={project["project-name"]} projectDesc={project["long-description"]} 
-                            link={project["project-links"][0]} itchLink={project["project-links"][1]} hasScreenshot={true} content={project.content} 
-                            videoLink={project.content[0]} volume={0}/>
+                            link={project["project-links"][0]} secondLink={project["project-links"][1]} hasScreenshot={true} content={project.content} 
+                            videoLink={project.content[0]} volume={0} buttonText={project["button-text"] ?? "View on Github"} 
+                            secondBtnText={project["second-text"] ?? "View on Itch"}/>
                         </Popup>
                     </li>)}
                 </ul>
@@ -67,7 +68,7 @@ const PlayerSlide = ({url, isSelected, loop, volume}) => (
 const customRenderItem = (item, props) => <item.type {...item.props} {...props} />
 
 // Popup to view a given project
-const ProjectCard = ({projectName, projectDesc, volume, link, content, itchLink="", itchButton="View on Itch", buttonText="View on GitHub"}) => {
+const ProjectCard = ({projectName, projectDesc, volume, link, content, secondLink="", secondBtnText="View on Itch", buttonText="View on GitHub"}) => {
     return (
         <div className={
             isMobile ? "bg-gray-900 text-white text-center text-lg font-bold w-full rounded-md pt-2" 
@@ -103,13 +104,13 @@ const ProjectCard = ({projectName, projectDesc, volume, link, content, itchLink=
                 </div>
 
                 <div className="pb-3">
-                    {itchLink!=="" ? 
+                    {secondLink!=="" ? 
                     <button onClick={()=>{window.open(
-                                            itchLink,
+                                            secondLink,
                                             '_blank' // <- This is what makes it open in a new window.
                                         );}} 
                             className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                        {itchButton}</button> : null}
+                        {secondBtnText}</button> : null}
                 </div> 
             </div>
         </div>

@@ -24,8 +24,7 @@ const Desktop = () => {
 
                         <div className="text-lg font-bold text-center pr-[200px] pt-5">
                             Hi, my name is Jake Morgenstern, and I'm a game development and computer science student at Indiana University
-                            Bloomington with experience in Unreal Engine 5 and Unity. Currently I'm working on Decomposition, an analog horror game,
-                            and an unnanounced narrative-driven tactics game.
+                            Bloomington with experience in Unreal Engine 5 and Unity. Currently I'm working on Decomposition, an analog horror game.
                             Use the bar on the left to explore my projects, learn more about me, or get in contact. If you want to take a look
                             at what I've done, click the button below to view my Github.
 
@@ -68,8 +67,7 @@ const Mobile = () => {
 
                         <div className="text-lg font-bold text-center pl-5 pr-5 pt-5">
                             Hi, my name is Jake Morgenstern, and I'm a game development and computer science student at Indiana University
-                            Bloomington with experience in Unreal Engine 5 and Unity. Currently I'm working on Decomposition, an analog horror game,
-                            and an unnanounced narrative-driven tactics game.
+                            Bloomington with experience in Unreal Engine 5 and Unity. Currently I'm working on Decomposition, an analog horror game.
                             Use the bar on the left to explore my projects, learn more about me, or get in contact. If you want to take a look
                             at what I've done, click the button below to view my Github.
 

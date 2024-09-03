@@ -13,7 +13,7 @@ const ContactPage = () => {
     );
 };
 
-const FORM_ENDPOINT = "https://public.herotofu.com/v1/4264a0e0-0e35-11ed-ad4a-fdce08e86751";
+const FORM_ENDPOINT = "https://usebasin.com/f/16db205d16c7";
 
 const ContactForm = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -46,7 +46,7 @@ const ContactForm = () => {
             type="text"
             placeholder="Enter Name"
             name="name"
-            className="appearance-none block w-full bg-gray-600 text-gray-700 border focus:border-red-500 rounded py-3 
+            className="appearance-none block w-full bg-gray-600 text-white border focus:border-red-500 rounded py-3 
             px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-500" 
             required
           />
@@ -57,7 +57,7 @@ const ContactForm = () => {
             type="email"
             placeholder="Enter Email"
             name="email"
-            className="appearance-none block w-full bg-gray-600 text-gray-700 border focus:border-red-500 rounded py-3 
+            className="appearance-none block w-full bg-gray-600 text-white border focus:border-red-500 rounded py-3 
             px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-500"
             required
           />
@@ -85,7 +85,7 @@ const ContactForm = () => {
 };
 
 function ReturnMessageInputClass() {
-    let firstPart = "appearance-none message-input bg-gray-600 text-gray-700 border focus:border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-500"
+    let firstPart = "appearance-none message-input bg-gray-600 text-white border focus:border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-500"
 
     return isMobile ? firstPart.concat(" w-[250px] h-[200px]") : firstPart.concat(" w-[400px] h-[200px]") 
 }

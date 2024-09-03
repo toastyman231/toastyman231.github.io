@@ -37,7 +37,7 @@ const AboutPage = () => {
                         <VerticalTimelineElement className="vertical-timeline-element--work"
                                                 contentStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
                                                 contentArrowStyle={{ borderRight: '7px solid  rgb(22, 163, 74)' }}
-                                                date="May 2023 - Present"
+                                                date="May 2023 - June 2024"
                                                 dateClassName="text-left"
                                                 iconStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
                                                 icon={<SiUnrealengine />}>
@@ -46,6 +46,20 @@ const AboutPage = () => {
                             <h4 className="vertical-timeline-element-subtitle">Bloomington, IN (Remote)</h4>
                             <p>
                             Helped design and develop a tactics game prototype using Unreal Engine 5. Worked alongside artists and other designers to deliver a unique and exciting gameplay experience.
+                            </p>
+                        </VerticalTimelineElement>  
+                        <VerticalTimelineElement className="vertical-timeline-element--work"
+                                                contentStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
+                                                contentArrowStyle={{ borderRight: '7px solid  rgb(22, 163, 74)' }}
+                                                date="August 2024 - December 2024"
+                                                dateClassName="text-left"
+                                                iconStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
+                                                icon={<GiTeacher />}>
+                            <h3 className="vertical-timeline-element-title">Undergraduate Instructor</h3>
+                            <h3 className="vertical-timeline-element-title">at Indiana University Bloomington</h3>
+                            <h4 className="vertical-timeline-element-subtitle">Bloomington, IN</h4>
+                            <p>
+                            Assisted teaching IU's Computer Graphics course, including running lab sections, preparing rubrics, grading assignments, holding office hours, and managing class resources.
                             </p>
                         </VerticalTimelineElement>  
                     </VerticalTimeline>
@@ -79,7 +93,7 @@ const AboutPage = () => {
                                             : 'flex flex-col items-center justify-center px-5'}>
                                 <SiUnrealengine size="100" className='' />
                                 <div className='text-thin text-base text-center pt-3'>
-                                    Familiar with Unreal workflow, Blueprints, and C++.
+                                    Experience working with Unreal Engine 5, Blueprints and C++.
                                 </div>
                                 <div className='text-thin text-base text-center pt-2'>
                                     Taught Unreal to kids at Emagination Tech Camp.
