@@ -7,7 +7,7 @@ const isMobile = window.innerWidth <= 768;
 
 const AboutPage = () => {
     return (
-        <div className="content-container overflow-y-scroll h-screen">
+        <div className={isMobile ? "content-container overflow-y-scroll h-screen w-[95vw]" : "content-container overflow-y-scroll h-screen"}>
             <div className={isMobile ? "text-white text-center flex flex-col pt-5 px-2" : "text-white text-center flex flex-col pt-5 px-20"}>
                 <div className="text-bold text-5xl text-center">About Me</div>
                 <div className="text-thin text-xl text-center pt-5">

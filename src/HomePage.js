@@ -12,7 +12,7 @@ const Divider = () => <hr className="sidebar-hr pt-5" />;
 
 const Desktop = () => {
     return (
-        <div className="content-container">
+        <div className="content-container overflow-y-scroll">
             <div className="text-white text-center font-bold text-7xl pt-4">
                 Jake Morgenstern
                 <div className="text-white font-thin text-center text-5xl pt-5">

@@ -4,7 +4,7 @@ const isMobile = window.innerWidth <= 768;
 
 const ContactPage = () => {
     return (
-        <div className="content-container">
+        <div className="content-container overflow-y-scroll w-[95-vw] h-[100vh]">
             <div className="text-bold text-5xl pt-4 text-white text-center">
                 Contact Me!
             </div>

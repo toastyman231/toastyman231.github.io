@@ -46,8 +46,13 @@ const ProjectsPage = () => {
                                 <p className="text-white text-center text-3xl font-bold w-full rounded-md pt-2">{project["project-name"]}</p>
                                 <p className="text-white text-center text-sm w-full rounded-md pt-2">{project["short-description"]}</p>
                             </div>
-                        </div>} modal position="center" contentStyle={{backgroundColor: "#202225", borderRadius: "6px", paddingTop: "16px",
-                                                                        paddingBottom: "16px", color: "#FFFFFF", width: "fit-content", height: "fit-content"}}>
+                        </div>} modal position="center" contentStyle={isMobile ? 
+                                                                        {backgroundColor: "#202225", borderRadius: "6px", paddingTop: "16px",
+                                                                        paddingBottom: "16px", color: "#FFFFFF", width: "95vw", height: "95vh",
+                                                                        overflowY: "scroll"} : 
+                                                                        {backgroundColor: "#202225", borderRadius: "6px", paddingTop: "16px",
+                                                                        paddingBottom: "16px", color: "#FFFFFF", width: "fit-content", height: "95vh",
+                                                                        overflowY: "scroll"}}>
                             <ProjectCard projectName={project["project-name"]} projectDesc={project["long-description"]} 
                             link={project["project-links"][0]} secondLink={project["project-links"][1]} hasScreenshot={true} content={project.content} 
                             videoLink={project.content[0]} volume={0} buttonText={project["button-text"] ?? "View on Github"} 
@@ -72,7 +77,7 @@ const ProjectCard = ({projectName, projectDesc, volume, link, content, secondLin
     return (
         <div className={
             isMobile ? "bg-gray-900 text-white text-center text-lg font-bold w-full rounded-md pt-2" 
-            : "bg-gray-900 text-white text-center text-lg font-bold w-[1000px] object-center rounded-md pt-2"
+            : "bg-gray-900 text-white max-w-[1000px] px-4 text-center text-lg font-bold object-center rounded-md pt-2"
         }>
             <div className={isMobile ? "divide-y" : ""}>
                 <div className="text-3xl">
