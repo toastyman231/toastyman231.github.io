@@ -20,20 +20,42 @@ const AboutPage = () => {
                 </div>
                 <div className="pt-5">
                     <VerticalTimeline>
-                        <VerticalTimelineElement className="vertical-timeline-element--work"
+                    <VerticalTimelineElement className="vertical-timeline-element--work"
                                                 contentStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
                                                 contentArrowStyle={{ borderRight: '7px solid  rgb(22, 163, 74)' }}
-                                                date="June 2022 - July 2022"
+                                                date="April 2024 - Present"
+                                                dateClassName="text-left"
+                                                iconStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
+                                                icon={<SiUnrealengine />}>
+                            <h3 className="vertical-timeline-element-title">Lead Programmer on Decomposition</h3>
+                            <h3 className="vertical-timeline-element-title">at Cozy Crow Studios</h3>
+                            <h4 className="vertical-timeline-element-subtitle">Bloomington, IN</h4>
+                            <p>
+                                Developed a 3D analog horror game in Unreal Engine 5.
+                                
+                            </p> <br className='block mt-0' />
+                            <p>
+                                Managed a team of programmers to rapidly prototype and iterate on gameplay features and systems to create a robust, maintainable codebase.
+                            </p> <br className='block mt-0' />
+                            <p>
+                                Wrote custom engine tools to speed up development.
+                                Helped other team members complete tasks by providing insight and experience in engine.
+                            </p>
+                        </VerticalTimelineElement> 
+                    <VerticalTimelineElement className="vertical-timeline-element--work"
+                                                contentStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
+                                                contentArrowStyle={{ borderRight: '7px solid  rgb(22, 163, 74)' }}
+                                                date="August 2024 - December 2024"
                                                 dateClassName="text-left"
                                                 iconStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
                                                 icon={<GiTeacher />}>
-                            <h3 className="vertical-timeline-element-title">Network Admin/Technology Counselor</h3>
-                            <h3 className="vertical-timeline-element-title">at Emagination Tech Camps</h3>
-                            <h4 className="vertical-timeline-element-subtitle">Lake Forest, IL</h4>
+                            <h3 className="vertical-timeline-element-title">Undergraduate Instructor</h3>
+                            <h3 className="vertical-timeline-element-title">at Indiana University Bloomington</h3>
+                            <h4 className="vertical-timeline-element-subtitle">Bloomington, IN</h4>
                             <p>
-                                Ran the camp network, including connecting devices and backing up network storage. Also taught game development and coding to kids and teens while maintaining a fun camp environment.
+                            Assisted teaching IU's Computer Graphics course, including running lab sections, preparing rubrics, grading assignments, holding office hours, and managing class resources.
                             </p>
-                        </VerticalTimelineElement>
+                        </VerticalTimelineElement> 
                         <VerticalTimelineElement className="vertical-timeline-element--work"
                                                 contentStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
                                                 contentArrowStyle={{ borderRight: '7px solid  rgb(22, 163, 74)' }}
@@ -51,17 +73,17 @@ const AboutPage = () => {
                         <VerticalTimelineElement className="vertical-timeline-element--work"
                                                 contentStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
                                                 contentArrowStyle={{ borderRight: '7px solid  rgb(22, 163, 74)' }}
-                                                date="August 2024 - December 2024"
+                                                date="June 2022 - July 2022"
                                                 dateClassName="text-left"
                                                 iconStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
                                                 icon={<GiTeacher />}>
-                            <h3 className="vertical-timeline-element-title">Undergraduate Instructor</h3>
-                            <h3 className="vertical-timeline-element-title">at Indiana University Bloomington</h3>
-                            <h4 className="vertical-timeline-element-subtitle">Bloomington, IN</h4>
+                            <h3 className="vertical-timeline-element-title">Network Admin/Technology Counselor</h3>
+                            <h3 className="vertical-timeline-element-title">at Emagination Tech Camps</h3>
+                            <h4 className="vertical-timeline-element-subtitle">Lake Forest, IL</h4>
                             <p>
-                            Assisted teaching IU's Computer Graphics course, including running lab sections, preparing rubrics, grading assignments, holding office hours, and managing class resources.
+                                Ran the camp network, including connecting devices and backing up network storage. Also taught game development and coding to kids and teens while maintaining a fun camp environment.
                             </p>
-                        </VerticalTimelineElement>  
+                        </VerticalTimelineElement>
                     </VerticalTimeline>
 
                     <div className="text-bold text-5xl text-center pt-5">

@@ -50,6 +50,8 @@ const ProjectsPage = () => {
                                 <div className="flex flex-grow flex-col items-center px-10">
                                     <p className="text-white text-center text-3xl font-bold w-full rounded-md pt-2">{project["project-name"]}</p>
                                     <p className="text-white text-center text-sm w-full rounded-md pt-2">{project["short-description"]}</p>
+                                    <p className="text-white text-center text-sm w-full rounded-md pt-2">Type: {project.type ?? "Demo"}</p>
+                                    <p className="text-white text-center text-sm w-full rounded-md pt-2">Role: {project.role ?? "Programmer"}</p>
                                 </div>
                             </div>} 
                             modal position="center" ref={popupRef}

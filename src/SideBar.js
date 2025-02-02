@@ -50,12 +50,12 @@ function ReturnClassName(active){
 
 const Divider = () => <hr className="sidebar-hr" />;
 
-function UpdateAll(page, newContent, state, newState, myCookies) {
-  prevButton = newContent
-  page(newContent)
-  state(newState)
-  myCookies.set('lastPage', newContent, {path: '/'})
-  console.log(cookies.get('lastPage'))
+export function UpdateAll(page, newContent, state, newState, myCookies) {
+  prevButton = newContent;
+  page(newContent);
+  if (state !== null && state !== undefined) state(newState);
+  myCookies.set('lastPage', newContent, {path: '/'});
+  console.log(cookies.get('lastPage'));
   //console.log(prevButton)
 }
 

@@ -22,18 +22,18 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 export const firebaseDB = getFirestore(firebaseApp);
 
-const components = {
-  "Home": <HomePage />,
-  "Projects": <ProjectsPage />,
-  "About": <AboutPage />,
-  "Contact": <ContactPage />
-}
-
 function App() {
   const cookies = new Cookies('lastPage');
-  let cookie = cookies.get('lastPage') != null ? cookies.get('lastPage') : 'Home'
+  let cookie = cookies.get('lastPage') ?? 'Home';
 
-  const [page, setPage] = useState(cookie)
+  const [page, setPage] = useState(cookie);
+
+  const components = {
+    "Home": <HomePage pageSetter={setPage} />,
+    "Projects": <ProjectsPage />,
+    "About": <AboutPage />,
+    "Contact": <ContactPage />
+  };
 
   return (
     <div className="flex">
