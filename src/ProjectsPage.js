@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Popup from 'reactjs-popup';
 import { Carousel } from "react-responsive-carousel";
 import ReactPlayer from 'react-player'
@@ -14,6 +14,8 @@ const isMobile = window.innerWidth <= 768;
 
 const ProjectsPage = () => {
     const [projects, setProjects] = useState([]);
+    const popupRef = useRef();
+    const closePopup = () => popupRef.current.close();
 
     const refreshProjects = async () => {
         const querySnapshot = await getDocs(collection(firebaseDB, "projects"));
@@ -37,25 +39,31 @@ const ProjectsPage = () => {
                 <ul>
                     {projects.map(project => 
                     <li className="pb-4 cursor-pointer">
-                        <Popup trigger={<div className={isMobile ? "bg-gray-900 pt-4 pb-4 flex flex-col items-center rounded-md transition hover:transition-all hover:duration-100 hover:outline hover:outline-white" : 
-                            "bg-gray-900 pt-4 pb-4 flex flex-row items-center rounded-md transition hover:transition-all hover:duration-100 hover:outline hover:outline-white"}>
-                            <div className="px-4">
-                                <img src={project.thumb} width={380} height={180} className="rounded-md" />
-                            </div>
-                            <div className="flex flex-col items-center px-10">
-                                <p className="text-white text-center text-3xl font-bold w-full rounded-md pt-2">{project["project-name"]}</p>
-                                <p className="text-white text-center text-sm w-full rounded-md pt-2">{project["short-description"]}</p>
-                            </div>
-                        </div>} modal position="center" contentStyle={isMobile ? 
-                                                                        {backgroundColor: "#202225", borderRadius: "6px", paddingTop: "16px",
-                                                                        paddingBottom: "16px", color: "#FFFFFF", width: "95vw", height: "95vh",
-                                                                        overflowY: "scroll"} : 
-                                                                        {backgroundColor: "#202225", borderRadius: "6px", paddingTop: "16px",
-                                                                        paddingBottom: "16px", color: "#FFFFFF", width: "fit-content", height: "95vh",
-                                                                        overflowY: "scroll"}}>
+                        <Popup trigger={
+                            <div className={
+                                isMobile ? 
+                                    "bg-gray-900 pt-4 pb-4 flex flex-col items-center rounded-md transition hover:transition-all hover:duration-100 hover:outline hover:outline-white" : 
+                                    "bg-gray-900 pt-4 pb-4 flex flex-row items-center rounded-md transition hover:transition-all hover:duration-100 hover:outline hover:outline-white"}>
+                                <div className="px-4">
+                                    <img src={project.thumb} width={380} height={180} className="rounded-md" />
+                                </div>
+                                <div className="flex flex-grow flex-col items-center px-10">
+                                    <p className="text-white text-center text-3xl font-bold w-full rounded-md pt-2">{project["project-name"]}</p>
+                                    <p className="text-white text-center text-sm w-full rounded-md pt-2">{project["short-description"]}</p>
+                                </div>
+                            </div>} 
+                            modal position="center" ref={popupRef}
+                            contentStyle={
+                                isMobile ? 
+                                    {backgroundColor: "#202225", borderRadius: "6px", paddingTop: "16px",
+                                    paddingBottom: "16px", color: "#FFFFFF", width: "95vw", height: "95vh",
+                                    overflowY: "scroll"} : 
+                                    {backgroundColor: "#202225", borderRadius: "6px", paddingTop: "16px",
+                                    paddingBottom: "16px", color: "#FFFFFF", width: "fit-content", height: "95vh",
+                                    overflowY: "scroll"}}>
                             <ProjectCard projectName={project["project-name"]} projectDesc={project["long-description"]} 
                             link={project["project-links"][0]} secondLink={project["project-links"][1]} hasScreenshot={true} content={project.content} 
-                            videoLink={project.content[0]} volume={0} buttonText={project["button-text"] ?? "View on Github"} 
+                            videoLink={project.content[0]} volume={0} closePopup={closePopup} buttonText={project["button-text"] ?? "View on Github"} 
                             secondBtnText={project["second-text"] ?? "View on Itch"}/>
                         </Popup>
                     </li>)}
@@ -73,13 +81,13 @@ const PlayerSlide = ({url, isSelected, loop, volume}) => (
 const customRenderItem = (item, props) => <item.type {...item.props} {...props} />
 
 // Popup to view a given project
-const ProjectCard = ({projectName, projectDesc, volume, link, content, secondLink="", secondBtnText="View on Itch", buttonText="View on GitHub"}) => {
+const ProjectCard = ({projectName, projectDesc, volume, link, content, closePopup, secondLink="", secondBtnText="View on Itch", buttonText="View on GitHub"}) => {
     return (
         <div className={
             isMobile ? "bg-gray-900 text-white text-center text-lg font-bold w-full rounded-md pt-2" 
             : "bg-gray-900 text-white max-w-[1000px] px-4 text-center text-lg font-bold object-center rounded-md pt-2"
         }>
-            <div className={isMobile ? "divide-y" : ""}>
+            <div className={isMobile ? "divide-y" : "relative"}>
                 <div className="text-3xl">
                     {projectName}
                 </div>
@@ -117,6 +125,8 @@ const ProjectCard = ({projectName, projectDesc, volume, link, content, secondLin
                             className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                         {secondBtnText}</button> : null}
                 </div> 
+                
+                <button onClick={closePopup} className='button sticky w-full left-1/2 bottom-0'>Back</button>
             </div>
         </div>
     );

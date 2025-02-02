@@ -41,7 +41,7 @@ const Desktop = () => {
                                             'https://toastyman231.itch.io/',
                                             '_blank' // <- This is what makes it open in a new window.
                                         );}} 
-                                        className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                                        className="button">
                                             View my Itch.io!</button>
                             </div>
                         </div>
