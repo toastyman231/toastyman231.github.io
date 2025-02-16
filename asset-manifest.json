@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.cb8191e0.css",
-    "main.js": "/static/js/main.689753ca.js",
+    "main.css": "/static/css/main.f73b99ef.css",
+    "main.js": "/static/js/main.528452f6.js",
     "reactPlayerYouTube.js": "/static/js/reactPlayerYouTube.0191d32e.chunk.js",
     "reactPlayerSoundCloud.js": "/static/js/reactPlayerSoundCloud.e5d8662d.chunk.js",
     "reactPlayerVimeo.js": "/static/js/reactPlayerVimeo.cc0119bb.chunk.js",
@@ -17,9 +17,14 @@
     "reactPlayerFilePlayer.js": "/static/js/reactPlayerFilePlayer.b0616e45.chunk.js",
     "reactPlayerPreview.js": "/static/js/reactPlayerPreview.83fa2b2a.chunk.js",
     "static/media/jake_photo.jpg": "/static/media/jake_photo.fa65c28d999545070ce2.jpg",
+    "static/media/itch.png": "/static/media/itch.be611875982afab0472f.png",
+    "static/media/jake_headshot2.jpg": "/static/media/jake_headshot2.39c557d87e10472be0b3.jpg",
+    "static/media/spongebob-cry.gif": "/static/media/spongebob-cry.ed894e550729b5a28fa6.gif",
+    "static/media/github.png": "/static/media/github.1a4bd3e0f37e24211250.png",
+    "static/media/linkedin.webp": "/static/media/linkedin.0b9f93d3aa6319636571.webp",
     "index.html": "/index.html",
-    "main.cb8191e0.css.map": "/static/css/main.cb8191e0.css.map",
-    "main.689753ca.js.map": "/static/js/main.689753ca.js.map",
+    "main.f73b99ef.css.map": "/static/css/main.f73b99ef.css.map",
+    "main.528452f6.js.map": "/static/js/main.528452f6.js.map",
     "reactPlayerYouTube.0191d32e.chunk.js.map": "/static/js/reactPlayerYouTube.0191d32e.chunk.js.map",
     "reactPlayerSoundCloud.e5d8662d.chunk.js.map": "/static/js/reactPlayerSoundCloud.e5d8662d.chunk.js.map",
     "reactPlayerVimeo.cc0119bb.chunk.js.map": "/static/js/reactPlayerVimeo.cc0119bb.chunk.js.map",
@@ -36,7 +41,7 @@
     "reactPlayerPreview.83fa2b2a.chunk.js.map": "/static/js/reactPlayerPreview.83fa2b2a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cb8191e0.css",
-    "static/js/main.689753ca.js"
+    "static/css/main.f73b99ef.css",
+    "static/js/main.528452f6.js"
   ]
 }
