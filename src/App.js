@@ -1,10 +1,10 @@
 //import './App.css';
-import HomePage from './HomePage';
-import SideBar from './SideBar';
-import ProjectsPage from './ProjectsPage';
+import HomePage from './pages/HomePage';
+import SideBar from './pages/SideBar';
+import ProjectsPage from './pages/ProjectsPage';
 import React, { useState } from 'react';
-import AboutPage from './AboutPage';
-import ContactPage from './ContactPage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 import Cookies from 'universal-cookie';
 import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';

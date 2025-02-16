@@ -7,7 +7,7 @@ import 'reactjs-popup/dist/index.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import { useState, useEffect } from 'react';
-import { firebaseDB } from "./App";
+import { firebaseDB } from "../App";
 import { collection, getDocs } from 'firebase/firestore';
 
 const isMobile = window.innerWidth <= 768;
