@@ -1,8 +1,8 @@
-import jake from "../Images/jake_headshot2.jpg";
-import jake2 from "../Images/jake_photo.jpg";
-import linkedin from "../Images/linkedin.webp";
-import github from "../Images/github.png";
-import itch from "../Images/itch.png";
+import jake from "../images/jake_headshot2.jpg";
+import jake2 from "../images/jake_photo.jpg";
+import linkedin from "../images/linkedin.webp";
+import github from "../images/github.png";
+import itch from "../images/itch.png";
 import LinkButton from "../components/LinkButton";
 
 const Links = () => {

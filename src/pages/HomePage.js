@@ -1,5 +1,5 @@
 import Cookies from "universal-cookie";
-import jake from "../Images/jake_photo.jpg";
+import jake from "../images/jake_photo.jpg";
 import { UpdateAll } from "./SideBar";
 
 let page;

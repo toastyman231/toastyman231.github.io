@@ -1,4 +1,4 @@
-import SpongebobCrying from '../Images/spongebob-cry.gif'
+import SpongebobCrying from '../images/spongebob-cry.gif'
 import { NavLink } from "react-router";
 
 const PageNotFound = () => {
