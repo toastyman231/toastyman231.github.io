@@ -14,6 +14,7 @@ function renderSite(){
       <React.StrictMode>
         <Routes>
           <Route path="/" element={<App />} />
+          <Route path="/links" element={<Links />} />
           <Route path="/links.html" element={<Links />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
