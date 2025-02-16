@@ -1,7 +1,7 @@
 
 const LinkButton = ({pageLink, pageIcon, linkText}) => {
     return(
-        <div className="h-full w-[91%] md:w-[91%] lg:w-[580px]">
+        <div className="h-full w-[91%] md:w-[580px] lg:w-[580px]">
             <div className="relative h-full">
                 <div className="h-full overflow-hidden rounded-[30px]
                     bg-transparent border-2 transition-all
