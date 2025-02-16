@@ -1,8 +1,6 @@
 import SpongebobCrying from '../Images/spongebob-cry.gif'
 import { NavLink } from "react-router";
 
-const isMobile = window.innerWidth <= 768;
-
 const PageNotFound = () => {
     return (
         <div className={"content-container h-fill w-screen m-0 flex flex-col items-center"}>
