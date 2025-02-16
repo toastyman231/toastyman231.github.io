@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-const isMobile = window.innerWidth <= 768;
-
 const ContactPage = () => {
     return (
         <div className="content-container overflow-y-scroll w-[95-vw] h-[100vh]">
@@ -85,9 +83,9 @@ const ContactForm = () => {
 };
 
 function ReturnMessageInputClass() {
-    let firstPart = "appearance-none message-input bg-gray-600 text-white border focus:border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-500"
+    let firstPart = "w-[250px] h-[200px] md:w-[400px] lg:w-[400px] appearance-none message-input bg-gray-600 text-white border focus:border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-500"
 
-    return isMobile ? firstPart.concat(" w-[250px] h-[200px]") : firstPart.concat(" w-[400px] h-[200px]") 
+    return firstPart;
 }
 
 export default ContactPage;

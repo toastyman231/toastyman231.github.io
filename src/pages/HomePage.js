@@ -4,7 +4,6 @@ import { UpdateAll } from "./SideBar";
 
 let page;
 const cookies = new Cookies();
-const isMobile = window.innerWidth <= 768;
 
 const HomePage = ({pageSetter}) => {
     page = pageSetter;
@@ -18,19 +17,19 @@ const Divider = () => <hr className="sidebar-hr pt-5" />;
 
 const Content = () => {
     return (
-        <div className={isMobile ? "content-container h-screen overflow-y-scroll" : "content-container overflow-y-scroll"}>
-            <div className={isMobile ? "text-white text-center font-bold text-5xl pt-4" : "text-white text-center font-bold text-7xl pt-4"}>
+        <div className= "content-container overflow-y-scroll h-screen">
+            <div className="text-white text-center font-bold pt-4 text-5xl md:text-7xl lg:text-7xl">
                 Jake Morgenstern
-                <div className={isMobile ? "text-white font-thin text-center text-xl pt-5" : "text-white font-thin text-center text-5xl pt-5"}> 
-                    Game Developer and Student at Indiana University
-                    <div className={isMobile ? "flex flex-col items-center" : "flex overflow-auto items-center pt-10"}>
-                        <div className={isMobile ? "object-center pt-5" : "flex flex-grow object-left pl-10 pr-10"}>
-                            <img src={jake} alt="Jake Morgenstern headshot" width={1728} height={2304} />
+                <div className="text-white font-thin text-center pt-5 text-3xl md:text-5xl lg:text-5xl sm:pb-5 "> 
+                    Gameplay and Engine Programmer
+                    <div className="flex flex-col md:flex-row lg:flex-row items-center md:pt-10 lg:pt-10 lg:overflow-auto">
+                        <div className="lg:flex lg:flex-grow lg:object-left lg:px-10">
+                            <img src={jake} alt="Jake Morgenstern headshot" className="p-2 md:p-10 lg:p-0 pt-5 md:pt-10 lg:pt-0 lg:w-[1728px]" />
                         </div>
 
-                        <div className={isMobile ? "text-lg font-bold text-center pl-5 pr-5 pt-5" : "text-lg font-bold text-center pr-[200px] pt-5"}>
-                            Hi, my name is Jake Morgenstern, and I'm a game development and computer science student at Indiana University
-                            Bloomington with experience in Unreal Engine 5 and Unity. Currently I'm working on Decomposition, an analog horror game.
+                        <div className="text-lg font-bold text-center md:text-justify lg:text-justify p-5 md:pr-10 lg:pr-20">
+                            Hi, my name is Jake Morgenstern, and I'm a gameplay programmer with experience in Unreal Engine 5 and Unity. Currently I'm working on Decomposition, 
+                            an analog horror game. I'm also working on my own custom C++ game engine, and a game to go along with it.
                             Use the bar on the left to explore my projects, learn more about me, or get in contact. If you want to take a look
                             at what I've done, click the button below to view my Github.
 
@@ -38,19 +37,19 @@ const Content = () => {
 
                             <div className="flex flex-col items-center">
                                 <button onClick={()=>{UpdateAll(page, "Projects", undefined, undefined, cookies);}} 
-                                        className="button mb-4">
+                                        className="button mb-4 w-[200px]">
                                             View my Projects!</button>
                                 <button onClick={()=>{window.open(
                                             'https://www.github.com/toastyman231',
                                             '_blank' // <- This is what makes it open in a new window.
                                         );}} 
-                                        className="button mb-4">
+                                        className="button mb-4 w-[200px]">
                                             View my GitHub!</button>
                                 <button onClick={()=>{window.open(
                                             'https://toastyman231.itch.io/',
                                             '_blank' // <- This is what makes it open in a new window.
                                         );}} 
-                                        className="button mb-4">
+                                        className="button mb-4 w-[200px]">
                                             View my Itch.io!</button>
                             </div>
                         </div>
