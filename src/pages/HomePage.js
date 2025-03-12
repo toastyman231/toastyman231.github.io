@@ -27,8 +27,8 @@ const Content = () => {
                             <img src={jake} alt="Jake Morgenstern headshot" className="p-2 md:p-10 lg:p-0 pt-5 md:pt-10 lg:pt-0 lg:w-[1728px]" />
                         </div>
 
-                        <div className="text-lg font-bold text-center md:text-justify lg:text-justify p-5 md:pr-10 lg:pr-20">
-                            Hi, my name is Jake Morgenstern, and I'm a gameplay programmer with experience in Unreal Engine 5 and Unity. Currently I'm working on Decomposition, 
+                        <div className="text-lg font-bold text-justify p-5 md:pr-10 lg:pr-20">
+                            Hi, my name is Jake Morgenstern, and I'm a gameplay programmer with experience in Unreal Engine 5 and Unity. Currently I'm working on Desecration, 
                             an analog horror game. I'm also working on my own custom C++ game engine, and a game to go along with it.
                             Use the bar on the left to explore my projects, learn more about me, or get in contact. If you want to take a look
                             at what I've done, click the button below to view my Github.

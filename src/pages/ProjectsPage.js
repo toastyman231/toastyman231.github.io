@@ -106,11 +106,11 @@ const ProjectCard = ({projectName, projectDesc, volume, link, content, closePopu
 
                 <div className="mx-2 my-2 border-none" />
                 
-                <div className="text-base sm:px-1 sm:pt-1 border-none">
+                <div className="text-base text-justify p-2 border-none">
                     {projectDesc}
                 </div>
 
-                <Carousel renderItem={customRenderItem} className="px-2 py-2 border-none" showThumbs={false}>
+                <Carousel renderItem={customRenderItem} className="p-2 border-none" showThumbs={false}>
                     {content.map(item => (
                         item.includes("png") || item.includes("jpg") || item.includes("jpeg") ?
                         <img src={item} className="w-full h-full" /> :
