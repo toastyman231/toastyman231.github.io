@@ -98,7 +98,7 @@ const customRenderItem = (item, props) => <item.type {...item.props} {...props} 
 // Popup to view a given project
 const ProjectCard = ({projectName, projectDesc, volume, link, content, closePopup, isMobile, secondLink="", secondBtnText="View on Itch", buttonText="View on GitHub"}) => {
     return (
-        <div className="bg-gray-900 text-white text-center text-lg font-bold w-full lg:object-center lg:max-w-[1000px] lg:px-4 rounded-md pt-2">
+        <div className="bg-gray-900 text-white text-center text-lg font-bold w-full lg:object-center lg:max-w-[1000px] lg:px-4 rounded-md pt-2 max-h-[95vh]">
             <div className="sm:divide-y md:relative lg:relative">
                 <div className="text-3xl">
                     {projectName}
