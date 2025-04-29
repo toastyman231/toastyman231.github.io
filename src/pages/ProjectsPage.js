@@ -170,7 +170,7 @@ export const ExternalProjectCard = ({projectId, sizeX = 190, sizeY = 90, page, c
     }, []);
 
     return (
-        <div className="bg-gray-900 my-2 py-4 flex flex-col md:flex-row lg:flex-row items-center 
+        <div className="bg-gray-900 my-2 py-4 flex flex-col md:flex-col lg:flex-row items-center 
                                 rounded-md transition hover:transition-all hover:duration-100 hover:outline hover:outline-white
                                 w-full lg:max-w-[500px]"
             onClick={()=>{UpdateAll(page, "Projects", undefined, undefined, cookies);}}>
