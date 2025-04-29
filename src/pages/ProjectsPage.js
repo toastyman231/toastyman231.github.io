@@ -9,6 +9,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useState, useEffect } from 'react';
 import { firebaseDB } from "../App";
 import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
+import { UpdateAll } from "./SideBar";
 
 const ProjectsPage = () => {
     const [projects, setProjects] = useState([]);
@@ -144,7 +145,7 @@ const ProjectCard = ({projectName, projectDesc, volume, link, content, closePopu
     );
 }
 
-export const ExternalProjectCard = ({projectId, sizeX = 190, sizeY = 90}) => {
+export const ExternalProjectCard = ({projectId, sizeX = 190, sizeY = 90, page, cookies}) => {
     const [project, setProject] = useState([]);
 
     const refreshProjects = async () => {
@@ -169,9 +170,10 @@ export const ExternalProjectCard = ({projectId, sizeX = 190, sizeY = 90}) => {
     }, []);
 
     return (
-        <div className="bg-gray-900 m-4 py-4 flex flex-col md:flex-row lg:flex-row items-center 
+        <div className="bg-gray-900 my-2 py-4 flex flex-col md:flex-row lg:flex-row items-center 
                                 rounded-md transition hover:transition-all hover:duration-100 hover:outline hover:outline-white
-                                max-w-[500px]">
+                                w-full lg:max-w-[500px]"
+            onClick={()=>{UpdateAll(page, "Projects", undefined, undefined, cookies);}}>
             <div className="px-4">
                 <img src={project.thumb} width={sizeX} height={sizeY} className="rounded-md" />
             </div>
