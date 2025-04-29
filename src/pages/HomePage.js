@@ -1,6 +1,7 @@
 import Cookies from "universal-cookie";
 import jake from "../images/jake_photo.jpg";
 import { UpdateAll } from "./SideBar";
+import { ExternalProjectCard } from "./ProjectsPage";
 
 let page;
 const cookies = new Cookies();
@@ -22,7 +23,7 @@ const Content = () => {
                 Jake Morgenstern
                 <div className="text-white font-thin text-center pt-5 text-3xl md:text-5xl lg:text-5xl sm:pb-5 "> 
                     Gameplay and Engine Programmer
-                    <div className="flex flex-col md:flex-row lg:flex-row items-center md:pt-10 lg:pt-10 lg:overflow-auto">
+                    <div className="flex flex-col md:flex-row lg:flex-row items-start md:pt-10 lg:pt-10 lg:overflow-auto">
                         <div className="lg:flex lg:flex-grow lg:object-left lg:px-10">
                             <img src={jake} alt="Jake Morgenstern headshot" className="p-2 md:p-10 lg:p-0 pt-5 md:pt-10 lg:pt-0 lg:w-[1728px]" />
                         </div>
@@ -35,22 +36,31 @@ const Content = () => {
 
                             <Divider />
 
-                            <div className="flex flex-col items-center">
-                                <button onClick={()=>{UpdateAll(page, "Projects", undefined, undefined, cookies);}} 
-                                        className="button mb-4 w-[200px]">
-                                            View my Projects!</button>
-                                <button onClick={()=>{window.open(
-                                            'https://www.github.com/toastyman231',
-                                            '_blank' // <- This is what makes it open in a new window.
-                                        );}} 
-                                        className="button mb-4 w-[200px]">
-                                            View my GitHub!</button>
-                                <button onClick={()=>{window.open(
-                                            'https://toastyman231.itch.io/',
-                                            '_blank' // <- This is what makes it open in a new window.
-                                        );}} 
-                                        className="button mb-4 w-[200px]">
-                                            View my Itch.io!</button>
+                            <div className="text-center">Top Projects</div>
+                            <div className="flex flex-col md:flex-row items-center md:items-start">
+                                <div>
+                                    <ExternalProjectCard projectId={"0DucClRh5hcAyMKrtkpi"} />
+                                    <ExternalProjectCard projectId={"1Alu9ABy4caKJoUJMIqx"} />
+                                    <ExternalProjectCard projectId={"1kKlmOhsB5Vk45GWqDzK"} />
+                                </div>
+
+                                <div className="flex flex-col items-center pt-4">
+                                    <button onClick={()=>{UpdateAll(page, "Projects", undefined, undefined, cookies);}} 
+                                            className="button mb-4 w-[200px]">
+                                                View my Projects!</button>
+                                    <button onClick={()=>{window.open(
+                                                'https://www.github.com/toastyman231',
+                                                '_blank' // <- This is what makes it open in a new window.
+                                            );}} 
+                                            className="button mb-4 w-[200px]">
+                                                View my GitHub!</button>
+                                    <button onClick={()=>{window.open(
+                                                'https://toastyman231.itch.io/',
+                                                '_blank' // <- This is what makes it open in a new window.
+                                            );}} 
+                                            className="button mb-4 w-[200px]">
+                                                View my Itch.io!</button>
+                                </div>
                             </div>
                         </div>
                     </div>

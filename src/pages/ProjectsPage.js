@@ -8,7 +8,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import { useState, useEffect } from 'react';
 import { firebaseDB } from "../App";
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
 
 const ProjectsPage = () => {
     const [projects, setProjects] = useState([]);
@@ -139,6 +139,47 @@ const ProjectCard = ({projectName, projectDesc, volume, link, content, closePopu
                 </div> 
                 
                 <button onClick={closePopup} className='button border-none sticky w-full left-1/2 bottom-0'>Back</button>
+            </div>
+        </div>
+    );
+}
+
+export const ExternalProjectCard = ({projectId, sizeX = 190, sizeY = 90}) => {
+    const [project, setProject] = useState([]);
+
+    const refreshProjects = async () => {
+        const docRef = doc(firebaseDB, "projects", projectId);
+        getDoc(docRef)
+            .then((docSnap) => {
+                if (docSnap.exists()) {
+                const data = docSnap.data();
+                console.log("Data: " + data);
+                setProject(data);
+                } else {
+                console.log("No such document!");
+                }
+            })
+            .catch((error) => {
+                console.error("Error getting document:", error);
+            });
+    }
+
+    useEffect(() => {
+        refreshProjects();
+    }, []);
+
+    return (
+        <div className="bg-gray-900 m-4 py-4 flex flex-col md:flex-row lg:flex-row items-center 
+                                rounded-md transition hover:transition-all hover:duration-100 hover:outline hover:outline-white
+                                max-w-[500px]">
+            <div className="px-4">
+                <img src={project.thumb} width={sizeX} height={sizeY} className="rounded-md" />
+            </div>
+            <div className="flex flex-grow flex-col items-center px-10">
+                <p className="text-white text-center text-3xl font-bold w-full rounded-md">{project["project-name"]}</p>
+                <p className="text-white text-center text-sm w-full rounded-md pt-2">{project["short-description"]}</p>
+                <p className="text-white text-center text-sm w-full rounded-md">Type: {project.type ?? "Demo"}</p>
+                <p className="text-white text-center text-sm w-full rounded-md">Role: {project.role ?? "Programmer"}</p>
             </div>
         </div>
     );
