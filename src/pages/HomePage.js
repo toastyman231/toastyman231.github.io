@@ -49,7 +49,7 @@ const Content = () => {
                                             className="button w-[200px] m-2">
                                                 View my Itch.io!</button>
                                     <button onClick={()=>{window.open(
-                                                'https://toastyman231.itch.io/',
+                                                'https://docs.google.com/document/d/1nLvawLqmwgFQ5h48K_fzNhydQ19HBeSew-4JYBpXET0/edit?usp=sharing',
                                                 '_blank' // <- This is what makes it open in a new window.
                                             );}} 
                                             className="button w-[200px] m-2">

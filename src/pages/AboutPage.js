@@ -10,8 +10,8 @@ const AboutPage = () => {
                 <div className="text-bold text-5xl text-center">About Me</div>
                 <div className="text-thin text-xl text-left pt-5 max-w-xl">
                     - Game developer with <bold className="font-bold">Unity</bold>, <bold className="font-bold">Unreal Engine 5</bold>, and <bold className="font-bold">C++</bold>.<br />
-                    - Student at Indiana University Bloomington, studying Computer Science with a specialization in game development.<br />
-                    - Courses taken include: Game Programming, Game Design, Java, Computing Theory, and more
+                    - Computer Science B.S. with a specialization in Game Development.<br />
+                    - Courses taken include: Game Programming, Computer Graphics, Game Design, Java, Computing Theory, and more
                 </div>
                 <div className="text-bold text-3xl text-center pt-5">
                     Work History

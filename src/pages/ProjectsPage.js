@@ -67,11 +67,10 @@ export const ExternalProjectCard = ({projectId, sizeX = 190, sizeY = 90}) => {
         getDoc(docRef)
             .then((docSnap) => {
                 if (docSnap.exists()) {
-                const data = docSnap.data();
-                console.log("Data: " + data);
-                setProject(data);
+                    const data = docSnap.data();
+                    setProject(data);
                 } else {
-                console.log("No such document!");
+                    console.log("No such document!");
                 }
             })
             .catch((error) => {
