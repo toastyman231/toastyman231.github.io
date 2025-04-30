@@ -1,20 +1,12 @@
-import Cookies from "universal-cookie";
 import jake from "../images/jake_headshot2.jpg";
-import { UpdateAll } from "./SideBar";
 import { ExternalProjectCard } from "./ProjectsPage";
+import { NavLink } from "react-router";
 
-let page;
-const cookies = new Cookies();
-
-const HomePage = ({pageSetter}) => {
-    page = pageSetter;
-
+const HomePage = () => {
     return (
         <Content />
     );
 };
-
-const Divider = () => <hr className="sidebar-hr pt-5" />;
 
 const Content = () => {
     return (
@@ -34,16 +26,16 @@ const Content = () => {
                             <div className="flex flex-col-reverse md:flex-row items-center md:items-start">
                                 <div className="flex flex-col items-start lg:items-center md:m-2">
                                     <div className="text-center mx-2 w-full">Top Projects</div>
-                                    <ExternalProjectCard projectId={"0DucClRh5hcAyMKrtkpi"} page={page} cookies={cookies} />
-                                    <ExternalProjectCard projectId={"1Alu9ABy4caKJoUJMIqx"} page={page} cookies={cookies} />
-                                    <ExternalProjectCard projectId={"1kKlmOhsB5Vk45GWqDzK"} page={page} cookies={cookies} />
+                                    <ExternalProjectCard projectId={"0DucClRh5hcAyMKrtkpi"} />
+                                    <ExternalProjectCard projectId={"1Alu9ABy4caKJoUJMIqx"} />
+                                    <ExternalProjectCard projectId={"1kKlmOhsB5Vk45GWqDzK"} />
                                 </div>
 
                                 <div className="flex flex-col items-center md:items-start md:flex-col-reverse justify-evenly 
                                                 m-2 md:mt-[-0.25rem]">
-                                    <button onClick={()=>{UpdateAll(page, "Projects", undefined, undefined, cookies);}} 
+                                    <NavLink to="/projects"
                                                 className="button w-[200px] m-2">
-                                                    View my Projects!</button>
+                                                    View my Projects!</NavLink>
                                     <button onClick={()=>{window.open(
                                                 'https://www.github.com/toastyman231',
                                                 '_blank' // <- This is what makes it open in a new window.
@@ -62,18 +54,18 @@ const Content = () => {
                                             );}} 
                                             className="button w-[200px] m-2">
                                                 View my Resume!</button>
-                                    <p className="m-2">
-                                        <p className="italic">Software: <br/></p>
+                                    <div className="m-2">
+                                        <p className="text-center md:text-left italic">Software: <br/></p>
                                         <p className="indent-6">- Unreal Engine 5 <br/></p>
                                             <p className="indent-12">- Blueprints/C++ <br/></p>
                                         <p className="indent-6">- Unity <br/></p>
                                         <p className="indent-6">- Git/Perforce <br/></p>
-                                        <p className="italic">Languages: <br/></p>
+                                        <p className="text-center md:text-left italic">Languages: <br/></p>
                                         <p className="indent-6">- C++ <br/></p>
                                         <p className="indent-6">- C# <br/></p>
                                         <p className="indent-6">- Java <br/></p>
                                         <p className="indent-6">- GLSL/HLSL <br/></p>
-                                    </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

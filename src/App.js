@@ -1,13 +1,16 @@
 //import './App.css';
 import HomePage from './pages/HomePage';
-import SideBar from './pages/SideBar';
-import ProjectsPage from './pages/ProjectsPage';
-import React, { useState } from 'react';
-import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
-import Cookies from 'universal-cookie';
+import React from 'react';
 import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
+import SideBar from './pages/SideBar';
+import Links from './pages/Links';
+import PageNotFound from './pages/404Page';
+import Project from './pages/Project';
+import ProjectsPage from './pages/ProjectsPage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+import { BrowserRouter, Routes, Route, useLocation } from "react-router";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -22,25 +25,23 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 export const firebaseDB = getFirestore(firebaseApp);
 
-function App() {
-  const cookies = new Cookies('lastPage');
-  let cookie = cookies.get('lastPage') ?? 'Home';
-
-  const [page, setPage] = useState(cookie);
-
-  const components = {
-    "Home": <HomePage pageSetter={setPage} />,
-    "Projects": <ProjectsPage />,
-    "About": <AboutPage />,
-    "Contact": <ContactPage />
-  };
-
+export default function App() {
   return (
-    <div className="flex">
-      <SideBar pageSetter={setPage} />
-      {components[page]}
-    </div>
+    <BrowserRouter>
+      <React.StrictMode>
+        <div className="lg:flex lg:flex-row">
+          <SideBar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/links" element={<Links />} />
+            <Route path="/projects/:projectID" element={<Project />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        </div>
+      </React.StrictMode>
+    </BrowserRouter>
   );
 }
-
-export default App;

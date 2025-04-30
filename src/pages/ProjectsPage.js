@@ -9,7 +9,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useState, useEffect } from 'react';
 import { firebaseDB } from "../App";
 import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
-import { UpdateAll } from "./SideBar";
+import { NavLink } from 'react-router';
 
 const ProjectsPage = () => {
     const [projects, setProjects] = useState([]);
@@ -90,11 +90,11 @@ const ProjectsPage = () => {
 };
 
 // Wrapper for putting videos in Carousels, to prevent them from playing when not selected on the carousel
-const PlayerSlide = ({url, isSelected, loop, volume, isMobile}) => (
+export const PlayerSlide = ({url, isSelected, loop, volume, isMobile}) => (
     <ReactPlayer width={url.includes("youtube") ? isMobile ? "100%" : 960 : "100%"} height={url.includes("youtube") ? isMobile ? "100%" : 540 : "100%"} volume={volume} loop={loop} url={url} playing={isSelected} />
 );
 // Black magic I got off the carousel docs
-const customRenderItem = (item, props) => <item.type {...item.props} {...props} />
+export const customRenderItem = (item, props) => <item.type {...item.props} {...props} />
 
 // Popup to view a given project
 const ProjectCard = ({projectName, projectDesc, volume, link, content, closePopup, isMobile, secondLink="", secondBtnText="View on Itch", buttonText="View on GitHub"}) => {
@@ -145,7 +145,7 @@ const ProjectCard = ({projectName, projectDesc, volume, link, content, closePopu
     );
 }
 
-export const ExternalProjectCard = ({projectId, sizeX = 190, sizeY = 90, page, cookies}) => {
+export const ExternalProjectCard = ({projectId, sizeX = 190, sizeY = 90}) => {
     const [project, setProject] = useState([]);
 
     const refreshProjects = async () => {
@@ -170,10 +170,10 @@ export const ExternalProjectCard = ({projectId, sizeX = 190, sizeY = 90, page, c
     }, []);
 
     return (
-        <div className="bg-gray-900 my-2 py-4 flex flex-col md:flex-col lg:flex-row items-center 
+        <NavLink className="bg-gray-900 my-2 py-4 flex flex-col md:flex-col lg:flex-row items-center 
                                 rounded-md transition hover:transition-all hover:duration-100 hover:outline hover:outline-white
                                 w-full lg:max-w-[500px]"
-            onClick={()=>{UpdateAll(page, "Projects", undefined, undefined, cookies);}}>
+            to={"/projects/"+projectId}>
             <div className="px-4">
                 <img src={project.thumb} width={sizeX} height={sizeY} className="rounded-md" />
             </div>
@@ -183,7 +183,7 @@ export const ExternalProjectCard = ({projectId, sizeX = 190, sizeY = 90, page, c
                 <p className="text-white text-center text-sm w-full rounded-md">Type: {project.type ?? "Demo"}</p>
                 <p className="text-white text-center text-sm w-full rounded-md">Role: {project.role ?? "Programmer"}</p>
             </div>
-        </div>
+        </NavLink>
     );
 }
 
