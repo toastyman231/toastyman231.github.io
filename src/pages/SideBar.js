@@ -21,13 +21,11 @@ const SideBar = () => {
   return (
       <div ref={wrapperRef}>
         <div onClick={() => {setCollapsed(false); }} 
-            className={isCollapsed ? "sidebar-icon fixed m-4 ml-2 bg-gray-900 !z-[99] lg:hidden" : "hidden"}>
+            className={getHamburgerClass(isLinksActive, isCollapsed)}>
           <GiHamburgerMenu size="28" className="" color="white" />
         </div>
 
-        <div className={isLinksActive || isCollapsed ? 
-            "fixed lg:static top-0 left-0 p-2 h-screen w-16 ml-[-4rem] lg:m-0 flex flex-col bg-gray-900 text-white shadow-lg transition-all duration-150 ease-linear" 
-          : "fixed lg:static top-0 left-0 p-2 h-screen w-16 m-0 !z-[99] flex flex-col bg-gray-900 text-white shadow-lg transition-all duration-150 ease-linear"}>
+        <div className={getSidebarClass(isLinksActive, isCollapsed)}>
           <div onClick={() => {setCollapsed(true)}} 
               className="sidebar-icon lg:hidden">
             <GiHamburgerMenu size="28" className="" color="white" />
@@ -41,6 +39,22 @@ const SideBar = () => {
       </div>
   );
 };
+
+function getHamburgerClass(isLinksActive, isCollapsed) {
+  if (isLinksActive) return "hidden";
+
+  if (isCollapsed) return "sidebar-icon fixed m-4 ml-2 bg-gray-900 !z-[99] lg:hidden";
+
+  else return "hidden";
+}
+
+function getSidebarClass(isLinksActive, isCollapsed) {
+  if (isLinksActive) return "hidden";
+
+  if (isCollapsed) return "fixed lg:static top-0 left-0 p-2 h-screen w-16 ml-[-4rem] lg:m-0 flex flex-col bg-gray-900 text-white shadow-lg transition-all duration-150 ease-linear";
+
+  else return "fixed lg:static top-0 left-0 p-2 h-screen w-16 m-0 !z-[99] flex flex-col bg-gray-900 text-white shadow-lg transition-all duration-150 ease-linear";
+}
 
 // Courtesy of https://stackoverflow.com/a/42234988
 function useOutsideAlerter(ref, outsideClickEvent) {
