@@ -13,7 +13,7 @@ const SideBar = () => {
   useOutsideAlerter(wrapperRef, () => setCollapsed(true));
 
   useEffect(() => {
-    if (matchPath(pathname, "/links") != null)
+    if (matchPath(pathname, "/links") != null || matchPath(pathname, "/links.html") != null)
       setLinksActive(true);
     else setLinksActive(false);
   }, []);
