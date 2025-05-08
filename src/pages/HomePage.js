@@ -34,7 +34,7 @@ const Content = () => {
                                 <div className="flex flex-col items-center md:items-start md:flex-col-reverse justify-evenly 
                                                 m-2 md:mt-[-0.25rem]">
                                     <NavLink to="/projects"
-                                                className="button w-[200px] m-2">
+                                                className="button w-[200px] m-2 text-center">
                                                     View my Projects!</NavLink>
                                     <button onClick={()=>{window.open(
                                                 'https://www.github.com/toastyman231',
