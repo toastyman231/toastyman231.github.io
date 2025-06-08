@@ -1,7 +1,8 @@
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { GiTeacher } from 'react-icons/gi';
-import { SiCplusplus, SiCsharp, SiUnity, SiUnrealengine} from 'react-icons/si';
+import { SiCplusplus, SiUnity, SiUnrealengine} from 'react-icons/si';
+import CSharpIcon from '../components/CsharpIcon';
 
 const AboutPage = () => {
     return (
@@ -21,7 +22,7 @@ const AboutPage = () => {
                     <VerticalTimelineElement className="vertical-timeline-element--work"
                                                 contentStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
                                                 contentArrowStyle={{ borderRight: '7px solid  rgb(22, 163, 74)' }}
-                                                date="April 2024 - Present"
+                                                date="April 2024 - May 2025"
                                                 dateClassName="text-left mx-5"
                                                 iconStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
                                                 icon={<SiUnrealengine />}>
@@ -90,7 +91,7 @@ const AboutPage = () => {
                         <table className="m-5">
                             <thead className="md:flex flex-row items-center justify-center w-[100vw] md:w-[90vw]">
                                 <div className="flex flex-row items-center justify-center w-full md:border-r-2 p-2">
-                                    <SiCsharp size="100" className="px-1" />
+                                    <CSharpIcon size="100" className="px-1" />
                                     <SiCplusplus size="100" className="px-1" />
                                 </div>
                                 <div className="md:hidden flex flex-row md:flex-col items-center justify-center">

@@ -15,7 +15,7 @@ import {MoonLoader} from 'react-spinners';
 import ContentToggle from "../components/ContentToggle";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 
-const Project = () => {
+const Sandbox = () => {
     const [project, setProject] = useState([]);
     const [width, setWidth] = useState(window.innerWidth);
     const [isLoading, setLoading] = useState(true);
@@ -33,9 +33,7 @@ const Project = () => {
     const tooltips = project.tooltips;
     const myCredits = project["my-credits"];
     const technologies = project.technologies;
-    const thumbnail = project.thumbnail ?? {link: null, artist: null};
-    const thumbnailLink = thumbnail.link ?? 'https://toastyman231.github.io/';
-    const thumbnailArtist = thumbnail.artist ?? 'Myself';
+    const thumbnail = project.thumbnail;
     const buttonText = project["button-text"];
 
     const refreshProject = async () => {
@@ -91,24 +89,21 @@ const Project = () => {
                             <div className="font-normal"><div className="inline font-bold">Project Type:</div> {type}</div>
                             <div className="inline font-bold">What I Did:</div>
                             {
-                                myCredits !== undefined && myCredits !== null &&
                                 myCredits.map(item => (
                                     <div className="indent-6">- {item}</div>
                                 ))
                             }
                         </div>
                         <div className="font-normal">
-                            <div className="font-bold">Technologies Used:</div>
+                            <div className="inline font-bold">Technologies Used:</div>
                             {
-                                technologies !== undefined && technologies !== null &&
                                 technologies.map(item => (
                                     <div className="indent-6">- {item}</div>
                                 ))
                             }
                             <div className="inline font-bold">Thumbnail Credit: </div>
-                            <a className="inline underline hover:text-blue-400" 
-                                href={thumbnailLink} 
-                                target="_blank" rel="noreferrer">{thumbnailArtist}</a>
+                            <a className="inline underline hover:text-blue-400" href={thumbnail.link ?? 'https://toastyman231.github.io/'} 
+                                target="_blank" rel="noreferrer">{thumbnail.artist ?? 'Myself'}</a>
                         </div>
                     </div>
                 </div>
@@ -121,7 +116,6 @@ const Project = () => {
                                 {
                                     item.includes("png") || item.includes("jpg") || item.includes("jpeg") ?
                                     <img src={item} className="w-full h-full" alt={
-                                        tooltips !== undefined && tooltips !== null && 
                                         tooltips[index] !== undefined && tooltips[index] !== null && tooltips[index] !== "NONE" ?
                                         tooltips[index] : ''
                                     } key={index} /> :
@@ -152,20 +146,21 @@ const Project = () => {
                     <ContentToggle className="text-base text-left" toggledClasses="bg-gray-900 m-2"
                         toggleButton={(isToggled) =>
                             <div className="button flex flex-row justify-center items-center p-3 gap-2 max-w-fit mb-2">
-                                    {
-                                        isToggled ?
-                                        <MdOutlineArrowForwardIos /> :
-                                        <MdOutlineArrowForwardIos className="rotate-90" />
-                                    }
-                                    Read More!
-                                </div>} 
-                            altToggleButton={<div>Read More!</div>} 
-                            content={
-                                <div>
-                                    {
-                                        parse(projectExtraDesc)
-                                    }
-                                </div>
+                                {
+                                    isToggled ?
+                                    <MdOutlineArrowForwardIos /> :
+                                    <MdOutlineArrowForwardIos className="rotate-90" />
+                                }
+                                Read More!
+                            </div>} 
+                        altToggleButton={<div>Read More!</div>} 
+                        content={
+                            <div>
+                                {
+                                    parse(projectExtraDesc)
+                                }
+                                <div className="text-xl font-bold my-2 ml-8">Turn-Based Action Queue</div>
+                            </div>
                         } 
                     />
                 }
@@ -192,4 +187,4 @@ const Project = () => {
 }
 
 
-export default Project;
+export default Sandbox;

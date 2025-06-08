@@ -1,6 +1,6 @@
 import { BsBraces, BsFillPersonFill, BsChatTextFill } from 'react-icons/bs';
 import { FaHome } from 'react-icons/fa';
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { matchPath, NavLink, useLocation } from 'react-router';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
@@ -16,7 +16,7 @@ const SideBar = () => {
     if (matchPath(pathname, "/links") != null || matchPath(pathname, "/links.html") != null)
       setLinksActive(true);
     else setLinksActive(false);
-  }, []);
+  }, [pathname]);
 
   return (
       <div ref={wrapperRef}>
@@ -27,7 +27,7 @@ const SideBar = () => {
 
         <div className={getSidebarClass(isLinksActive, isCollapsed)}>
           <div onClick={() => {setCollapsed(true)}} 
-              className="sidebar-icon lg:hidden">
+              className="sidebar-icon lg:hidden fixed bottom-2">
             <GiHamburgerMenu size="28" className="" color="white" />
           </div>
           <SideBarIcon icon={<FaHome size="28" className="" />} text="Home" newPage="" />
@@ -43,7 +43,7 @@ const SideBar = () => {
 function getHamburgerClass(isLinksActive, isCollapsed) {
   if (isLinksActive) return "hidden";
 
-  if (isCollapsed) return "sidebar-icon fixed m-4 ml-2 bg-gray-900 !z-[99] lg:hidden";
+  if (isCollapsed) return "sidebar-icon fixed bottom-0 m-4 ml-2 bg-gray-900 !z-[99] lg:hidden";
 
   else return "hidden";
 }
@@ -73,7 +73,7 @@ function useOutsideAlerter(ref, outsideClickEvent) {
       // Unbind the event listener on clean up
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [ref]);
+  }, [ref, outsideClickEvent]);
 }
 
 function SideBarIcon({icon, newPage, text = 'tooltip'}) {

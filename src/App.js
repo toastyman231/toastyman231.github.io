@@ -10,7 +10,8 @@ import Project from './pages/Project';
 import ProjectsPage from './pages/ProjectsPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
-import { BrowserRouter, Routes, Route, useLocation } from "react-router";
+import Sandbox from './pages/Sandbox'
+import { BrowserRouter, Routes, Route } from "react-router";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -39,6 +40,10 @@ export default function App() {
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            {
+              process.env.NODE_ENV === 'development' &&
+              <Route path="/sandbox/:projectID" element={<Sandbox />} />
+            }
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </div>

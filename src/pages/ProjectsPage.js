@@ -1,4 +1,3 @@
-import React, { useCallback } from 'react';
 import ReactPlayer from 'react-player'
 
 import 'reactjs-popup/dist/index.css';
@@ -36,7 +35,7 @@ const ProjectsPage = () => {
                         <NavLink to={"/projects/"+index} className="bg-gray-900 pt-4 pb-4 flex flex-col md:flex-row lg:flex-row items-center 
                                 rounded-md transition hover:transition-all hover:duration-100 hover:outline hover:outline-white">
                             <div className="px-4">
-                                <img src={project.thumb} width={380} height={180} className="rounded-md" />
+                                <img src={project.thumb} alt={project["project-name"] + " Thumbnail"} width={380} height={180} className="rounded-md" />
                             </div>
                             <div className="flex flex-grow flex-col items-center px-10">
                                 <p className="text-white text-center text-3xl font-bold w-full rounded-md pt-2">{project["project-name"]}</p>
@@ -88,7 +87,7 @@ export const ExternalProjectCard = ({projectId, sizeX = 190, sizeY = 90}) => {
                                 w-full lg:max-w-[500px]"
             to={"/projects/"+projectId}>
             <div className="px-4">
-                <img src={project.thumb} width={sizeX} height={sizeY} className="rounded-md" />
+                <img src={project.thumb} width={sizeX} height={sizeY} alt={project["project-name"] + " Thumbnail"} className="rounded-md" />
             </div>
             <div className="flex flex-grow flex-col items-center px-10">
                 <p className="text-white text-center text-3xl font-bold w-full rounded-md">{project["project-name"]}</p>
