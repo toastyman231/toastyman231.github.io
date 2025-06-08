@@ -52,8 +52,8 @@ const ProjectsPage = () => {
 };
 
 // Wrapper for putting videos in Carousels, to prevent them from playing when not selected on the carousel
-export const PlayerSlide = ({url, isSelected, loop, volume, isMobile}) => (
-    <ReactPlayer width={url.includes("youtube") ? isMobile ? "100%" : 960 : "100%"} height={url.includes("youtube") ? isMobile ? "100%" : 540 : "100%"} volume={volume} loop={loop} url={url} playing={isSelected} />
+export const PlayerSlide = ({url, isSelected, loop, volume, isMobile, style}) => (
+    <ReactPlayer className={style} width={url.includes("youtube") ? isMobile ? "100%" : 960 : "100%"} height={url.includes("youtube") ? isMobile ? "100%" : 540 : "100%"} volume={volume} muted loop={loop} url={url} playing={isSelected} />
 );
 // Black magic I got off the carousel docs
 export const customRenderItem = (item, props) => <item.type {...item.props} {...props} />

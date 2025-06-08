@@ -1,7 +1,7 @@
 import { NavLink, useParams } from "react-router";
 import { firebaseDB } from "../App";
 import { doc, getDoc } from 'firebase/firestore';
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 
 import { Carousel } from "react-responsive-carousel";
 import { customRenderItem, PlayerSlide } from "./ProjectsPage";
@@ -14,11 +14,15 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {MoonLoader} from 'react-spinners';
 import ContentToggle from "../components/ContentToggle";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
+import Popup from "reactjs-popup";
 
 const Project = () => {
     const [project, setProject] = useState([]);
     const [width, setWidth] = useState(window.innerWidth);
     const [isLoading, setLoading] = useState(true);
+    const [open, setOpen] = useState(false);
+    const closePopup = () => setOpen(false);
+    const [imageId, setImageId] = useState(0);
 
     const params = useParams();
     const projectId = params.projectID;
@@ -40,6 +44,7 @@ const Project = () => {
 
     const refreshProject = async () => {
         const docRef = doc(firebaseDB, "projects", projectId);
+
         getDoc(docRef)
             .then((docSnap) => {
                 if (docSnap.exists()) {
@@ -63,12 +68,18 @@ const Project = () => {
     const handleWindowSizeChange = useCallback(() => {
             setWidth(window.innerWidth);
         }, []);
+    const handleClick = useCallback(() => {
+        console.log("CLICKED!");
+        if (open) closePopup();
+    }, []);
 
     useEffect(() => {
             refreshProject();
             window.addEventListener('resize', handleWindowSizeChange);
+            window.addEventListener('click', handleClick);
             return () => {
                 window.removeEventListener('resize', handleWindowSizeChange);
+                window.removeEventListener('click', handleClick);
             };
         }, [handleWindowSizeChange])
     
@@ -119,15 +130,20 @@ const Project = () => {
                     {<Carousel renderItem={customRenderItem} className="m-2" showThumbs={false}>
                         {content.map((item, index) => (
                             <div>
-                                {
-                                    item.includes("png") || item.includes("jpg") || item.includes("jpeg") ?
-                                    <img src={item} className="w-full h-full" alt={
+                                <button key={index} onClick={() => {
+                                    setImageId(index);
+                                    setOpen(o => !o);
+                                }}>
+                                    {
+                                        item.includes("png") || item.includes("jpg") || item.includes("jpeg") ?
+                                        <img src={item} className="w-full h-full" alt={
                                         tooltips !== undefined && tooltips !== null && 
                                         tooltips[index] !== undefined && tooltips[index] !== null && tooltips[index] !== "NONE" ?
                                         tooltips[index] : ''
-                                    } key={index} /> :
-                                    <PlayerSlide url={item} loop={true} volume={0} isMobile={isMobile} />
-                                }
+                                        } /> :
+                                        <PlayerSlide  url={item} loop={true} volume={0} isMobile={isMobile} />
+                                    }
+                                </button>
                                 {
                                     tooltips !== undefined && tooltips !== null && 
                                     tooltips[index] !== undefined && tooltips[index] !== null && tooltips[index] !== "NONE" ?
@@ -137,6 +153,26 @@ const Project = () => {
                             
                         ))}
                     </Carousel>}
+
+                    <Popup closeOnEscape closeOnDocumentClick open={open} modal onClose={() => closePopup()}
+                        contentStyle={{width: "100%", height: "100%", background: "transparent", border: "none"}}>
+                        <div className="w-full h-full" onClick={() => closePopup()}>
+                            {
+                                content[imageId].includes("png") || content[imageId].includes("jpg") || content[imageId].includes("jpeg") ?
+                                <img src={content[imageId]} 
+                                    className="top-[50%] left-[50%] relative translate-x-[-50%] translate-y-[-50%] max-w-[90vw] max-h-full object-contain" 
+                                    alt={
+                                        tooltips !== undefined && tooltips !== null && 
+                                        tooltips[imageId] !== undefined && tooltips[imageId] !== null && tooltips[imageId] !== "NONE" ?
+                                        tooltips[imageId] : ''
+                                    } 
+                                /> :
+                                <PlayerSlide isSelected={true}
+                                    style="top-[50%] left-[50%] relative translate-x-[-50%] translate-y-[-50%] max-w-[90vw] max-h-full object-contain" 
+                                    url={content[imageId]} loop={true} volume={0} isMobile={isMobile} />
+                            }
+                        </div>
+                    </Popup>
 
                     <div className="text-base text-left p-2 border-none">
                         <div className="text-2xl font-bold left-0 mb-4">About the Project:</div>
