@@ -127,10 +127,10 @@ const Project = () => {
                 
                 <div>
                     <div className="text-3xl sm:text-center md:text-left">Showcase</div>
-                    {<Carousel renderItem={customRenderItem} className="m-2" showThumbs={false}>
+                    {<Carousel onChange={(index) => setImageId(index)} renderItem={customRenderItem} className="m-2" showThumbs={false}>
                         {content.map((item, index) => (
                             <div>
-                                <button key={index} onClick={() => {
+                                <button onClick={() => {
                                     setImageId(index);
                                     setOpen(o => !o);
                                 }}>
@@ -141,7 +141,7 @@ const Project = () => {
                                         tooltips[index] !== undefined && tooltips[index] !== null && tooltips[index] !== "NONE" ?
                                         tooltips[index] : ''
                                         } /> :
-                                        <PlayerSlide  url={item} loop={true} volume={0} isMobile={isMobile} />
+                                        <PlayerSlide isSelected={index === imageId && !open} key={index} url={item} loop={true} volume={0} isMobile={isMobile} />
                                     }
                                 </button>
                                 {

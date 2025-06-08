@@ -141,6 +141,7 @@ const Sandbox = () => {
                             {
                                 parse(projectDesc)
                             }
+                            <br />
                         </div>
                     </div>
                 </div>
