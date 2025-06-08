@@ -73,8 +73,9 @@ const Project = () => {
         }, [handleWindowSizeChange])
     
     if (isLoading) return (
-        <div className="flex flex-col w-screen h-screen justify-center items-center">
+        <div className="content-container flex flex-col w-screen h-screen justify-center items-center text-white">
             <MoonLoader />
+            Fetching project data...
         </div>);
     else return (
         <div className="content-container overflow-y-scroll h-screen flex flex-col items-center">
@@ -93,7 +94,7 @@ const Project = () => {
                             {
                                 myCredits !== undefined && myCredits !== null &&
                                 myCredits.map(item => (
-                                    <div className="indent-6">- {item}</div>
+                                    <div className="ml-6">- {item}</div>
                                 ))
                             }
                         </div>
@@ -102,7 +103,7 @@ const Project = () => {
                             {
                                 technologies !== undefined && technologies !== null &&
                                 technologies.map(item => (
-                                    <div className="indent-6">- {item}</div>
+                                    <div className="ml-6">- {item}</div>
                                 ))
                             }
                             <div className="inline font-bold">Thumbnail Credit: </div>

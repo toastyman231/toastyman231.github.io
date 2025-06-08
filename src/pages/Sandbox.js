@@ -71,8 +71,9 @@ const Sandbox = () => {
         }, [handleWindowSizeChange])
     
     if (isLoading) return (
-        <div className="flex flex-col w-screen h-screen justify-center items-center">
+        <div className="content-container flex flex-col w-screen h-screen justify-center items-center text-white">
             <MoonLoader />
+            Fetching project data...
         </div>);
     else return (
         <div className="content-container overflow-y-scroll h-screen flex flex-col items-center">
@@ -89,16 +90,18 @@ const Sandbox = () => {
                             <div className="font-normal"><div className="inline font-bold">Project Type:</div> {type}</div>
                             <div className="inline font-bold">What I Did:</div>
                             {
+                                myCredits !== undefined && myCredits !== null &&
                                 myCredits.map(item => (
-                                    <div className="indent-6">- {item}</div>
+                                    <div className="ml-6">- {item}</div>
                                 ))
                             }
                         </div>
                         <div className="font-normal">
                             <div className="inline font-bold">Technologies Used:</div>
                             {
+                                technologies !== undefined && technologies !== null &&
                                 technologies.map(item => (
-                                    <div className="indent-6">- {item}</div>
+                                    <div className="ml-6">- {item}</div>
                                 ))
                             }
                             <div className="inline font-bold">Thumbnail Credit: </div>
@@ -116,6 +119,7 @@ const Sandbox = () => {
                                 {
                                     item.includes("png") || item.includes("jpg") || item.includes("jpeg") ?
                                     <img src={item} className="w-full h-full" alt={
+                                        tooltips !== undefined && tooltips !== null && 
                                         tooltips[index] !== undefined && tooltips[index] !== null && tooltips[index] !== "NONE" ?
                                         tooltips[index] : ''
                                     } key={index} /> :
