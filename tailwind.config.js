@@ -26,6 +26,9 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('tailwind-scrollbar-hide')
+    require('tailwind-scrollbar-hide'),
+    function({ addVariant }) {
+      addVariant('firefox', ':-moz-any(&)')
+    }
   ],
 }

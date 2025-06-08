@@ -6,18 +6,24 @@ import CSharpIcon from '../components/CsharpIcon';
 
 const AboutPage = () => {
     return (
-        <div className="content-container overflow-y-scroll h-screen sm:w-[95vw] md:w-full lg:w-full">
-            <div className="text-white text-center flex flex-col pt-5 px-2 md:px-20 lg:px-20 items-center">
+        <div className="content-container overflow-y-scroll h-screen w-full">
+            <div className="text-white text-center flex flex-col pt-5 px-2 items-center">
                 <div className="text-bold text-5xl text-center">About Me</div>
                 <div className="text-thin text-xl text-left pt-5 max-w-xl">
                     - Game developer with <bold className="font-bold">Unity</bold>, <bold className="font-bold">Unreal Engine 5</bold>, and <bold className="font-bold">C++</bold>.<br />
                     - Computer Science B.S. with a specialization in Game Development.<br />
                     - Courses taken include: Game Programming, Computer Graphics, Game Design, Java, Computing Theory, and more
                 </div>
-                <div className="text-bold text-3xl text-center pt-5">
+                <button onClick={()=>{window.open(
+                                        'https://docs.google.com/document/d/1nLvawLqmwgFQ5h48K_fzNhydQ19HBeSew-4JYBpXET0/edit?usp=sharing',
+                                        '_blank' // <- This is what makes it open in a new window.
+                                    );}} 
+                        className="button w-[200px] m-2">
+                    View my Resume!</button>
+                <div className="text-bold text-3xl text-center pt-2">
                     Work History
                 </div>
-                <div className="pt-5 max-w-[80vw] md:max-w-[50vw] lg:max-w-full">
+                <div className="pt-5 max-w-full">
                     <VerticalTimeline>
                     <VerticalTimelineElement className="vertical-timeline-element--work"
                                                 contentStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
@@ -85,47 +91,43 @@ const AboutPage = () => {
                         </VerticalTimelineElement>
                     </VerticalTimeline>
 
-                    <div className="text-bold text-5xl text-center pt-5 flex flex-col items-center justify-center">
+                    <div className="text-bold text-5xl text-center pt-5 flex flex-col items-center justify-center md:text-center">
                         Skills
 
-                        <table className="m-5">
-                            <thead className="md:flex flex-row items-center justify-center w-[100vw] md:w-[90vw]">
-                                <div className="flex flex-row items-center justify-center w-full md:border-r-2 p-2">
-                                    <CSharpIcon size="100" className="px-1" />
-                                    <SiCplusplus size="100" className="px-1" />
+                        <div className="m-5 block md:grid md:grid-rows-1 md:grid-cols-3 text-base text-left items-center md:items-start">
+                            <div className="hidden md:flex flex-col md:flex-row items-center justify-center w-full md:border-r-2 p-2 ">
+                                <CSharpIcon size="100" className="px-1" />
+                                <SiCplusplus size="100" className="px-1" />
+                            </div>
+                            <SiUnity size="116" className="hidden md:block w-full md:border-r-2 px-1 md:p-2" />
+                            <SiUnrealengine size="116" className="hidden md:block w-full px-1 md:p-2" />
+                            <div className='flex md:hidden flex-row items-center'>
+                                <CSharpIcon size="100" className="w-full px-1 md:p-2 md:hidden" />
+                                <SiCplusplus size="100" className="w-full px-1 md:p-2 md:hidden" />
+                                <SiUnity size="116" className="w-full md:border-r-2 px-1 md:p-2" />
+                                <SiUnrealengine size="116" className="w-full px-1 md:p-2" />
+                            </div>
+                            <div className='grid grid-rows-2 grid-cols-3 row-span-2 col-span-3'>
+                                <div className='p-2 px-4 w-full md:border-r-2 col-span-3 md:col-span-1 h-full'>
+                                    Taught C# and programming fundamentals to kids aged 8 - 17.
                                 </div>
-                                <div className="md:hidden flex flex-row md:flex-col items-center justify-center">
-                                    <SiUnity size="100" className="md:w-full md:border-r-2 px-1 md:p-2" />
-                                    <SiUnrealengine size="100" className="md:w-full px-1 md:p-2" />
+                                <div className='p-2 px-4 w-full md:border-r-2 col-span-3 md:col-span-1 h-full'>
+                                    6+ years of experience developing 2D and 3D games with Unity.
                                 </div>
-                                <SiUnity size="116" className="hidden md:table w-full border-r-2 px-1 md:p-2" />
-                                <SiUnrealengine size="116" className="hidden md:table w-full px-1 md:p-2" />
-                            </thead>
-                            <tbody>
-                                <tr className="flex flex-col md:flex-row my-2 md:my-0 text-thin text-base text-justify md:text-center">
-                                    <div className='p-2 max-w-[80vw] md:w-full md:border-r-2'>
-                                        Taught C# and programming fundamentals to kids aged 8 - 17.
-                                    </div>
-                                    <div className='p-2 max-w-[80vw] md:w-full md:border-r-2'>
-                                        6+ years of experience developing 2D and 3D games with Unity.
-                                    </div>
-                                    <div className='p-2 max-w-[80vw] md:w-full'>
-                                        Experience working with Unreal Engine 5, Blueprints and C++.
-                                    </div>
-                                </tr>
-                                <tr className="flex flex-col md:flex-row my-2 md:my-0 text-thin text-base text-justify md:text-center">
-                                    <div className='p-2 max-w-[80vw] md:w-full md:border-r-2'>
-                                        Experience developing games in C++ using a custom engine.
-                                    </div>
-                                    <div className='p-2 max-w-[80vw] md:w-full md:border-r-2'>
-                                        Familiar with Git version control in Unity using Github.
-                                    </div>
-                                    <div className='p-2 max-w-[80vw] md:w-full'>
-                                        Taught Unreal to kids at Emagination Tech Camp.
-                                    </div>
-                                </tr>
-                            </tbody>
-                        </table>
+                                <div className='p-2 px-4 w-full col-span-3 md:col-span-1 h-full'>
+                                    Experience working with Unreal Engine 5, Blueprints and C++.
+                                </div>
+                                <div className='p-2 px-4 w-full md:border-r-2 col-span-3 md:col-span-1'>
+                                    Experience developing games in C++ using a custom engine.
+                                </div>
+                                <div className='p-2 px-4 w-full md:border-r-2 col-span-3 md:col-span-1'>
+                                    Familiar with Git version control in Unity using Github.
+                                </div>
+                                <div className='p-2 px-4 w-full col-span-3 md:col-span-1'>
+                                    Taught Unreal to kids at Emagination Tech Camp.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
