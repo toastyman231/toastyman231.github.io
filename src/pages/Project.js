@@ -15,6 +15,7 @@ import {MoonLoader} from 'react-spinners';
 import ContentToggle from "../components/ContentToggle";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import Popup from "reactjs-popup";
+import { ReactCompareSlider, ReactCompareSliderImage } from "react-compare-slider";
 
 const Project = () => {
     const [project, setProject] = useState([]);
@@ -135,12 +136,25 @@ const Project = () => {
                                     setOpen(o => !o);
                                 }}>
                                     {
+                                        item["COMPARISON"] !== undefined ?
+                                        <ReactCompareSlider
+                                            itemOne={<ReactCompareSliderImage src={item["COMPARISON"][0]} alt={
+                                                tooltips !== undefined && tooltips !== null && 
+                                                tooltips[index] !== undefined && tooltips[index] !== null && tooltips[index] !== "NONE" ?
+                                                tooltips[index] : ''
+                                                } />}
+                                            itemTwo={<ReactCompareSliderImage src={item["COMPARISON"][1]} alt={
+                                                tooltips !== undefined && tooltips !== null && 
+                                                tooltips[index] !== undefined && tooltips[index] !== null && tooltips[index] !== "NONE" ?
+                                                tooltips[index] : ''
+                                                } />}
+                                            /> :
                                         item.includes("png") || item.includes("jpg") || item.includes("jpeg") ?
-                                        <img src={item} className="w-full h-full" alt={
-                                        tooltips !== undefined && tooltips !== null && 
-                                        tooltips[index] !== undefined && tooltips[index] !== null && tooltips[index] !== "NONE" ?
-                                        tooltips[index] : ''
-                                        } /> :
+                                            <img src={item} className="w-full h-full" alt={
+                                            tooltips !== undefined && tooltips !== null && 
+                                            tooltips[index] !== undefined && tooltips[index] !== null && tooltips[index] !== "NONE" ?
+                                            tooltips[index] : ''
+                                            } /> :
                                         <PlayerSlide isSelected={index === imageId && !open} key={index} url={item} loop={true} volume={0} isMobile={isMobile} />
                                     }
                                 </button>
@@ -158,6 +172,19 @@ const Project = () => {
                         contentStyle={{width: "100%", height: "100%", background: "transparent", border: "none"}}>
                         <div className="w-full h-full" onClick={() => closePopup()}>
                             {
+                                content[imageId]["COMPARISON"] !== undefined ?
+                                <ReactCompareSlider
+                                    itemOne={<ReactCompareSliderImage src={content[imageId]["COMPARISON"][0]} alt={
+                                        tooltips !== undefined && tooltips !== null && 
+                                        tooltips[imageId] !== undefined && tooltips[imageId] !== null && tooltips[imageId] !== "NONE" ?
+                                        tooltips[imageId] : ''
+                                        } />}
+                                    itemTwo={<ReactCompareSliderImage src={content[imageId]["COMPARISON"][1]} alt={
+                                        tooltips !== undefined && tooltips !== null && 
+                                        tooltips[imageId] !== undefined && tooltips[imageId] !== null && tooltips[imageId] !== "NONE" ?
+                                        tooltips[imageId] : ''
+                                        } />}
+                                    /> :
                                 content[imageId].includes("png") || content[imageId].includes("jpg") || content[imageId].includes("jpeg") ?
                                 <img src={content[imageId]} 
                                     className="top-[50%] left-[50%] relative translate-x-[-50%] translate-y-[-50%] max-w-[90vw] max-h-full object-contain" 
