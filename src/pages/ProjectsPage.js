@@ -22,6 +22,9 @@ const ProjectsPage = () => {
         refreshProjects();
     }, [])
 
+    // TODO: Split projects into 'Team Efforts' and 'Personal Stuff' when I have some AAA credits,
+    // so I can list both on the same page
+
     return (
         <div className="content-container overflow-y-scroll h-screen text-white">
             <div className="text-bold text-5xl text-center pt-5">

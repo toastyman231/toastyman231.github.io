@@ -1,8 +1,34 @@
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { GiTeacher } from 'react-icons/gi';
-import { SiCplusplus, SiUnity, SiUnrealengine} from 'react-icons/si';
+import { SiCplusplus, SiUnity, SiUnrealengine, SiMlb } from 'react-icons/si';
 import CSharpIcon from '../components/CsharpIcon';
+
+const WorkCard = ({title, company, location, date, icon, description}) => {
+    console.log(description);
+
+    return (
+        <VerticalTimelineElement className="vertical-timeline-element--work"
+                                contentStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
+                                contentArrowStyle={{ borderRight: '7px solid  rgb(22, 163, 74)' }}
+                                date={date}
+                                dateClassName="text-left mx-5"
+                                iconStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
+                                icon={icon}>
+            <h3 className="vertical-timeline-element-title">{title}</h3>
+            <h3 className="vertical-timeline-element-title">at <h3 className='italic inline'>{company}</h3></h3>
+            <h4 className="vertical-timeline-element-subtitle">{location}</h4>
+            <p></p>
+            <ul className="text-left list-disc">
+                {
+                    description.map((desc, index) =>
+                        <li key={index}>{desc}</li>
+                    )
+                }
+            </ul>
+        </VerticalTimelineElement> 
+    );
+};
 
 const AboutPage = () => {
     return (
@@ -25,70 +51,51 @@ const AboutPage = () => {
                 </div>
                 <div className="pt-5 max-w-full">
                     <VerticalTimeline>
-                    <VerticalTimelineElement className="vertical-timeline-element--work"
-                                                contentStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
-                                                contentArrowStyle={{ borderRight: '7px solid  rgb(22, 163, 74)' }}
-                                                date="April 2024 - May 2025"
-                                                dateClassName="text-left mx-5"
-                                                iconStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
-                                                icon={<SiUnrealengine />}>
-                            <h3 className="vertical-timeline-element-title">Lead Programmer on Desecration</h3>
-                            <h3 className="vertical-timeline-element-title">at Cozy Crow Studios</h3>
-                            <h4 className="vertical-timeline-element-subtitle">Bloomington, IN</h4>
-                            <p className="text-justify">
-                                Developed a 3D analog horror game in Unreal Engine 5.
-                                
-                            </p> <br className='block mt-0' />
-                            <p className="text-justify">
-                                Managed a team of programmers to rapidly prototype and iterate on gameplay features and systems to create a robust, maintainable codebase.
-                            </p> <br className='block mt-0' />
-                            <p className="text-justify">
-                                Wrote custom engine tools to speed up development.
-                                Helped other team members complete tasks by providing insight and experience in engine.
-                            </p>
-                        </VerticalTimelineElement> 
-                    <VerticalTimelineElement className="vertical-timeline-element--work"
-                                                contentStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
-                                                contentArrowStyle={{ borderRight: '7px solid  rgb(22, 163, 74)' }}
-                                                date="August 2024 - December 2024"
-                                                dateClassName="text-left mx-5"
-                                                iconStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
-                                                icon={<GiTeacher />}>
-                            <h3 className="vertical-timeline-element-title">Undergraduate Instructor</h3>
-                            <h3 className="vertical-timeline-element-title">at Indiana University Bloomington</h3>
-                            <h4 className="vertical-timeline-element-subtitle">Bloomington, IN</h4>
-                            <p className="text-justify">
-                            Assisted teaching IU's Computer Graphics course, including running lab sections, preparing rubrics, grading assignments, holding office hours, and managing class resources.
-                            </p>
-                        </VerticalTimelineElement> 
-                        <VerticalTimelineElement className="vertical-timeline-element--work"
-                                                contentStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
-                                                contentArrowStyle={{ borderRight: '7px solid  rgb(22, 163, 74)' }}
-                                                date="May 2023 - June 2024"
-                                                dateClassName="text-left mx-5"
-                                                iconStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
-                                                icon={<SiUnrealengine />}>
-                            <h3 className="vertical-timeline-element-title">Programmer</h3>
-                            <h3 className="vertical-timeline-element-title">at The Raft Genre</h3>
-                            <h4 className="vertical-timeline-element-subtitle">Bloomington, IN (Remote)</h4>
-                            <p className="text-justify">
-                            Helped design and develop a tactics game prototype using Unreal Engine 5. Worked alongside artists and other designers to deliver a unique and exciting gameplay experience.
-                            </p>
-                        </VerticalTimelineElement>  
-                        <VerticalTimelineElement className="vertical-timeline-element--work"
-                                                contentStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
-                                                contentArrowStyle={{ borderRight: '7px solid  rgb(22, 163, 74)' }}
-                                                date="June 2022 - July 2022"
-                                                dateClassName="text-left mx-5"
-                                                iconStyle={{ background: 'rgb(22, 163, 74)', color: '#fff' }}
-                                                icon={<GiTeacher />}>
-                            <h3 className="vertical-timeline-element-title">Network Admin/Technology Counselor</h3>
-                            <h3 className="vertical-timeline-element-title">at Emagination Tech Camps</h3>
-                            <h4 className="vertical-timeline-element-subtitle">Lake Forest, IL</h4>
-                            <p className="text-justify">
-                                Ran the camp network, including connecting devices and backing up network storage. Also taught game development and coding to kids and teens while maintaining a fun camp environment.
-                            </p>
-                        </VerticalTimelineElement>
+                        <WorkCard title="Graphics UI Programmer (Contract)"
+                                    company="Sony San Diego Studio"
+                                    date="Nov 2025 - Present"
+                                    icon={<SiMlb />}
+                                    location="San Diego, CA"
+                                    description={[
+                                        "Optimized and extended user interface rendering for MLB: The Show."
+                                    ]} />
+                        <WorkCard title="Lead Programmer on Desecration"
+                                    company="Cozy Crow Studios"
+                                    date="April 2024 - May 2025"
+                                    icon={<SiUnrealengine />}
+                                    location="Bloomington, IN"
+                                    description={[
+                                        "Developed a 3D analog horror game in Unreal Engine 5.",
+                                        "Managed a team of programmers to rapidly prototype and iterate on gameplay features and systems to create a robust, maintainable codebase.",
+                                        "Wrote custom engine tools to speed up development.",
+                                        "Helped other team members complete tasks by providing insight and experience in engine."
+                                    ]}/>
+                        <WorkCard title="Undergraduate Instructor"
+                                    company="Indiana University Bloomington"
+                                    date="August 2024 - December 2024"
+                                    icon={<GiTeacher />}
+                                    location="Bloomington, IN"
+                                    description={[
+                                        "Assisted teaching IU's Computer Graphics course, including running lab sections, preparing rubrics, grading assignments, holding office hours, and managing class resources."
+                                    ]}/>
+                        <WorkCard title="Game Programmer"
+                                    company="The Raft Genre"
+                                    date="May 2023 - June 2024"
+                                    icon={<SiUnrealengine />}
+                                    location="Bloomington, IN (Remote)"
+                                    description={[
+                                        "Helped design and develop a tactics game prototype using Unreal Engine 5.",
+                                        "Worked alongside artists and other designers to deliver a unique and exciting gameplay experience."
+                                    ]}/>
+                        <WorkCard title="Network Admin/Technology Counselor"
+                                    company="Emagination Tech Camps"
+                                    date="June 2022 - July 2022"
+                                    icon={<GiTeacher />}
+                                    location="Lake Forest, IL"
+                                    description={[
+                                        "Ran the camp network, including connecting devices and backing up network storage.",
+                                        "Taught game development and coding to kids and teens while maintaining a fun camp environment."
+                                    ]}/>
                     </VerticalTimeline>
 
                     <div className="text-bold text-5xl text-center pt-5 flex flex-col items-center justify-center md:text-center">

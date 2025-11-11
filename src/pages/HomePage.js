@@ -14,7 +14,7 @@ const Content = () => {
             <div className="text-white text-center font-bold pt-4 text-5xl md:text-7xl lg:text-7xl">
                 Jake Morgenstern
                 <div className="text-white font-thin text-center pt-5 text-3xl md:text-5xl lg:text-5xl sm:pb-5 "> 
-                    Gameplay and Engine Programmer
+                    Graphics UI Programmer @ <a href="https://sonysandiegostudio.games/" target="_blank">San Diego Studio</a>
                     <div className="flex flex-col justify-center md:flex-row lg:flex-row items-center md:items-start 
                                     md:pt-10 lg:pt-10 lg:overflow-auto">
                         <div className="m-2 mt-9">
